@@ -1,0 +1,25 @@
+.items{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top{
+    background-color: red;
+    width: 100%;
+    height: 80px;
+}
+
+.top .logo{
+    height: 60px;
+    margin: 10px 30px;
+}
+
+.top .buttons-container{
+    margin-left: auto;
+}
+
+.top .buttons-container button{
+    width: 100px;
+    height: 60px;
+    margin: 10px 20px 10px 10px;
+}

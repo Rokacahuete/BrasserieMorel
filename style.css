@@ -79,3 +79,10 @@
     height: 50vh;
     background-color: purple;
 }
+
+.interview{
+    padding: 20px 0px;
+    width: 20vw;
+    margin: 0px 20px;
+    background-color: orange;
+}

@@ -22,7 +22,7 @@
 }
 
 .top{
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: 100%;
     height: auto;
     background-color: red;
@@ -55,9 +55,7 @@
 }
 
 #beers .item{
-    flex: 1 1 300px;
-    display: flex;
-    flex-direction: column;
+    padding: 0px 10vw;
     align-items: center;
     background-color: yellow;
 }

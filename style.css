@@ -12,6 +12,15 @@
     gap: 20px;
 }
 
+.items .arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    padding: 0px 20px;
+    background-color: green;
+}
+
 .top{
     background-color: red;
     width: 100%;
@@ -44,15 +53,6 @@
     max-width: 100%;
 }
 
-#events .arrow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    padding: 0px 20px;
-    background-color: green;
-}
-
 #beers .item{
     flex: 1 1 300px;
     display: flex;
@@ -66,4 +66,16 @@
     height: auto;
     max-width: 100%;
     object-fit: contain; 
+}
+
+#sell-points .carousel{
+    display: flex;
+}
+
+.carousel .sell-point{
+    padding: 20px;
+    margin: 0px 20px;
+    width: 20vw;
+    height: 50vh;
+    background-color: purple;
 }

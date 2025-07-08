@@ -22,9 +22,10 @@
 }
 
 .top{
-    background-color: red;
+    margin-bottom: 100px;
     width: 100%;
     height: auto;
+    background-color: red;
 }
 
 .top .logo{
@@ -85,4 +86,16 @@
     width: 20vw;
     margin: 0px 20px;
     background-color: orange;
+}
+
+.bottom {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    background-color: brown;
+}
+
+.bottom .items>div{
+    margin: 20px 50px;
+    background-color: white;
 }

@@ -1,9 +1,12 @@
 .items{
     display: flex;
     flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: stretch;
 }
 
-.centered > div {
+.centered>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
+    width: 12.5%;
     padding: 0px 20px;
     background-color: green;
 }
@@ -45,13 +48,13 @@
 
 #events .event{
     max-width: 50%;
-    text-align: center;
     background-color: blue;
 }
 
 #events img{
-    max-height: 50vh;
+    height: 500px;
     max-width: 100%;
+    object-fit: cover;
 }
 
 #beers .item{

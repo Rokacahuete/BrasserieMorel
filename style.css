@@ -44,7 +44,7 @@
 }
 
 #events .event{
-    max-width: 80%;
+    max-width: 50%;
     text-align: center;
     background-color: blue;
 }
@@ -96,4 +96,23 @@
 .bottom .items>div{
     margin: 20px 50px;
     background-color: white;
+}
+
+/* Computer */
+@media (min-width: 769px){
+    .top .drop-down-menu{
+        display: none;
+    }
+}
+
+.top .drop-down-menu button{
+    width: 100%;
+    background-color: transparent;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    .top .buttons-container{
+        display: none;
+    }
 }

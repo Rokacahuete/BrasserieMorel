@@ -46,6 +46,11 @@
     margin: 10px 20px 10px 10px;
 }
 
+.top .drop-down-menu button{
+    width: 100%;
+    background-color: transparent;
+}
+
 #events .event{
     max-width: 50%;
     background-color: blue;
@@ -106,16 +111,31 @@
     .top .drop-down-menu{
         display: none;
     }
-}
 
-.top .drop-down-menu button{
-    width: 100%;
-    background-color: transparent;
+    .items .arrow-mobile{
+        display: none;
+    }
 }
 
 /* Mobile */
 @media (max-width: 768px){
     .top .buttons-container{
         display: none;
+    }
+
+    .items .arrow{
+        display: none;
+    }
+
+    .items .arrow-mobile{
+        font-size: xx-large;
+        margin: 0px 20px;
+        padding: 0px 30px;
+        background-color: burlywood;
+    }
+
+    #events .event{
+        max-width: 80%;
+        padding: 0px 10px 5px 10px;
     }
 }

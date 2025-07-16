@@ -85,6 +85,20 @@
     object-fit: cover;
 }
 
+#beer-dispensers .item{
+    flex: 1 1 0;
+    padding: 20px;
+    min-width: 0;
+    max-width: 80%;
+    background-color: coral;
+}
+
+#beer-dispensers .item img{
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
 #sell-points .carousel{
     display: flex;
 }

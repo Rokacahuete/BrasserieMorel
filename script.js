@@ -4,19 +4,18 @@ function Ready() {
     DropDownMenuSwitch();
     LoadYML();
     UpdateEvent();
+    UpdateBeers();
 }
 
 let dropDownMenuIsOpen = false;
 function DropDownMenuSwitch() {
     const L_ELEMENT = document.getElementById("header-drop-down-menu");
-    const L_NONE = "None", L_EMPTY = "";
-    L_ELEMENT.style.display = dropDownMenuIsOpen = !dropDownMenuIsOpen ? L_NONE : L_EMPTY;
+    L_ELEMENT.style.display = dropDownMenuIsOpen = !dropDownMenuIsOpen ? "None" : "";
 }
 
 let config;
 function LoadYML() {
-    let lYamlPath = "config";
-    let lYamlText = document.getElementById(lYamlPath).textContent;
+    let lYamlText = document.getElementById("config").textContent;
     config = jsyaml.load(lYamlText); 
 }
 
@@ -33,8 +32,12 @@ function UpdateEvent() {
 }
 
 // Beers
-function LoadBeers() {
-    let 
+function UpdateBeers() {
+    const L_EVENT_BEER_NAME = document.getElementById("event-beer-name");
+    const L_EVENT_BEER_IMAGE = document.getElementById("event-beer-img");
+
+    L_EVENT_BEER_NAME.innerHTML = config.event_beers[0].name;
+    L_EVENT_BEER_IMAGE.src = `Images/${config.event_beers[0].img}`;
 }
 
 

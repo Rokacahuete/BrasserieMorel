@@ -15,6 +15,12 @@
           - name: Anniversaire de la brasserie !
             date: Samedi 13 Septembre à 18h
             img: 13 Septembre.png
+          - name: 2 !
+            date: Samedi 13 Septembre à 18h
+            img: 13 Septembre.png
+          - name: 3 !
+            date: Samedi 13 Septembre à 18h
+            img: 13 Septembre.png
         beers:
           - name: Blonde
           - name: Ambrée
@@ -59,9 +65,9 @@
             <div class = "drop-down-menu">
                 <button onclick = "DropDownMenuSwitch()">V</button>
                 <div class = "centered" id = "header-drop-down-menu">
-                    <div>Bières</div>
-                    <div>Évènements</div>
-                    <div>Contact</div>
+                    <button>Bières</button>
+                    <button>Évènements</button>
+                    <button>Contact</button>
                 </div>
             </div>
         </div>
@@ -73,17 +79,17 @@
         <div class = "section" id = "events">
             <h1>Nos évènements</h1>
             <div class = "items">
-                <div class = "arrow">LEFT</div>
+                <div class = "arrow" onclick = "UpdateEvent(-1)">LEFT</div>
                 <div class = "event">
                     <h2 id = "event-title">Event Name</h2>
                     <img id = "event-img" src = "Images/">
                     <div id = "event-date">00/00</div>
                     <div class = "items">
-                        <div class = "arrow-mobile">&lt;</div>
-                        <div class = "arrow-mobile">&gt;</div>
+                        <button class = "arrow-mobile" onclick = "UpdateEvent(-1)">&lt;</button>
+                        <button class = "arrow-mobile" onclick = "UpdateEvent(1)">&gt;</button>
                     </div>
                 </div>
-                <div class = "arrow">RIGHT</div>
+                <div class = "arrow" onclick = "UpdateEvent(1)">RIGHT</div>
             </div>
         </div>
         <div class = "section" id = "beers">
@@ -93,7 +99,7 @@
                     <h2>La gamme permanante</h2>
                     <img src = "Images/WhatsApp Image 2024-11-13 à 15.30.08_f099af88.jpg">
                 </div>
-                <div class = "item" style = "background-color: lime;">
+                <div class = "item" id = "beer-event" style = "background-color: lime;">
                     <h2>Et en ce moment</h2>
                     <div id = "event-beer-name">Name</div>
                     <div class = "items">

@@ -30,6 +30,10 @@
     background-color: green;
 }
 
+.hide{
+    display: none;
+}
+
 .top{
     margin-bottom: 20px;
     width: 100%;

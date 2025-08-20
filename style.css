@@ -36,7 +36,7 @@
 }
 
 body{
-    margin: 0;
+    margin: 8px;
     background-color: lightyellow;
 }
 
@@ -44,14 +44,15 @@ body{
     width: 100%;
     height: auto;
     background-color: gray;
+    border-radius: 15px;
 }
 
 .top .logo{
     background-color: white;
     border: 1px solid black;
-    border-radius: 3px;
-    width: 60px;
-    height: 60px;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
     margin: 10px 30px;
 }
 
@@ -59,21 +60,34 @@ h1{
     font-family: 'Medieval Sharp', sans-serif;
 }
 
+button{
+    font-family: "Medieval Sharp";
+}
+
 .top .buttons-container{
     margin-left: auto;
 }
 
 .top .buttons-container button{
+    background-color: lightgray;
     width: 100px;
     height: 60px;
-    margin: 10px 20px 10px 10px;
-    border-radius: 8px;
-    font-family: "Medieval Sharp";
+    margin: 10px 10px 0px 0px;
+    border-radius: 15px;
 }
 
 .top .drop-down-menu button{
-    width: 100%;
+    background-color: rgb(170, 170, 170);
+    height: 35px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.top .drop-down-menu>button{
     background-color: transparent;
+    height: 25px;
+    width: calc(100% - 10px);
 }
 
 .banner{
@@ -84,7 +98,7 @@ h1{
     width: 90%;
     max-height: 50vh;
     object-fit: cover;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 .section {
@@ -97,6 +111,7 @@ h1{
 .section h1{
     padding: 0px 10px;
     border-bottom: 2px solid black;
+    border-radius: 10px;
 }
 
 #events .event{

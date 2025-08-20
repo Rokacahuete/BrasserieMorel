@@ -12,15 +12,12 @@
         site:
           title: Brasserie
         events:
-          - name: Anniversaire de la brasserie !
+          - name: Anniversaire en portrait !
             date: Samedi 13 Septembre à 18h
             img: 13 Septembre.png
-          - name: 2 !
+          - name: Anniversaire en paysage !
             date: Samedi 13 Septembre à 18h
-            img: 13 Septembre.png
-          - name: 3 !
-            date: Samedi 13 Septembre à 18h
-            img: 13 Septembre.png
+            img: 13 sept.png
         beers:
           - name: Blonde
           - name: Ambrée
@@ -71,8 +68,10 @@
                 </div>
             </div>
         </div>
-        <div class = "banner">
-            <img src = "Images/whistler-village-beer-festival.jpg">
+        <div class = "centered">
+            <div class = "banner">
+                <img src = "Images/whistler-village-beer-festival.jpg">
+            </div>
         </div>
     </header>
     <div class = "centered">
@@ -81,8 +80,8 @@
             <div class = "items">
                 <div class = "arrow" onclick = "UpdateEvent(-1)">LEFT</div>
                 <div class = "event">
-                    <h2 id = "event-title">Event Name</h2>
                     <img id = "event-img" src = "Images/">
+                    <h2 id = "event-title">Event Name</h2>
                     <div id = "event-date">00/00</div>
                     <div class = "items">
                         <button class = "arrow-mobile" onclick = "UpdateEvent(-1)">&lt;</button>

@@ -41,7 +41,7 @@ function UpdateEvent(pIndex) {
     L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
 
     if (eventTimeout) clearTimeout(eventTimeout);
-    eventTimeout = setTimeout(() => UpdateEvent(1), 3_500);
+    // eventTimeout = setTimeout(() => UpdateEvent(1), 3_500);
 }
 
 // Beers

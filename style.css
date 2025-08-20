@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
+    width: 100%;
 }
 
 .centered>div {
@@ -34,8 +35,12 @@
     display: none;
 }
 
+body{
+    margin: 0;
+    background-color: lightyellow;
+}
+
 .top{
-    margin-bottom: 20px;
     width: 100%;
     height: auto;
     background-color: gray;
@@ -50,8 +55,8 @@
     margin: 10px 30px;
 }
 
-.top h1{
-    font-family: 'Medieval Sharp', sans-serif; /* Brush Script MT; Ink Free; Lucida Handwriting;  */
+h1{
+    font-family: 'Medieval Sharp', sans-serif;
 }
 
 .top .buttons-container{
@@ -71,26 +76,37 @@
     background-color: transparent;
 }
 
+.banner{
+    margin: 50px 0px;
+}
+
 .banner img{
-    width: 100%;
+    width: 90%;
     max-height: 50vh;
     object-fit: cover;
+    border-radius: 50px
 }
 
 .section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section h1{
+    padding: 0px 10px;
+    border-bottom: 2px solid black;
 }
 
 #events .event{
-    max-width: 50%;
-    background-color: blue;
+    width: 80%;
+    background-color: purple;
 }
 
 #events img{
-    height: 500px;
+    min-height: 200px;
+    max-height: 300px;
     max-width: 100%;
     object-fit: cover;
 }
@@ -189,9 +205,18 @@
         background-color: burlywood;
     }
 
+    .banner{
+        margin: 20px 0px;
+    }
+
+    .banner img{
+        width: 95%;
+        border-radius: 20px;
+    }
+
     #events .event{
         max-width: 80%;
-        padding: 0px 10px 5px 10px;
+        padding: 10px 10px 5px 10px;
     }
 
     #beers>.items{

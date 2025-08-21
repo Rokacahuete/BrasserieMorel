@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class = "drop-down-menu centered">
-                <div id = "header-drop-down-menu" style="gap:0">
+                <div id = "header-drop-down-menu" style = "gap:0; width: 100%">
                     <button>Bières</button>
                     <button>Évènements</button>
                     <button>Contact</button>
@@ -77,18 +77,14 @@
     <div class = "centered">
         <div class = "section" id = "events">
             <h1>Nos évènements</h1>
-            <div class = "items">
-                <div class = "arrow" onclick = "UpdateEvent(-1)">LEFT</div>
-                <div class = "event">
-                    <img id = "event-img" src = "Images/">
-                    <h2 id = "event-title">Event Name</h2>
-                    <div id = "event-date">00/00</div>
-                    <div class = "items">
-                        <button class = "arrow-mobile" onclick = "UpdateEvent(-1)">&lt;</button>
-                        <button class = "arrow-mobile" onclick = "UpdateEvent(1)">&gt;</button>
-                    </div>
+            <div>
+                <img id = "event-img" src = "Images/">
+                <h2 id = "event-title">Event Name</h2>
+                <div id = "event-date">00/00</div>
+                <div class = "items">
+                    <div class = "arrow" onclick = "UpdateEvent(-1)">LEFT</div>
+                    <div class = "arrow" onclick = "UpdateEvent(1)">RIGHT</div>
                 </div>
-                <div class = "arrow" onclick = "UpdateEvent(1)">RIGHT</div>
             </div>
         </div>
         <div class = "section" id = "beers">
@@ -105,10 +101,6 @@
                         <div class = "arrow">LEFT</div>
                         <img id = "event-beer-img" src = "Images/IMG-20241113-WA0001.jpg">
                         <div class = "arrow">RIGHT</div>
-                    </div>
-                    <div class = "items">
-                        <div class = "arrow-mobile">&lt;</div>
-                        <div class = "arrow-mobile">&gt;</div>
                     </div>
                 </div>
             </div>

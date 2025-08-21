@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.centered>div {
+.centered {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,12 +23,15 @@
 }
 
 .items .arrow{
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    padding: 0px 20px;
-    background-color: green;
+    width: 100px;
+    height: 30px;
+    margin: 25px 10px 15px 10px
 }
 
 .hide{
@@ -70,6 +73,7 @@ button{
 
 .top .buttons-container button{
     background-color: lightgray;
+    border: 2px solid black;
     width: 100px;
     height: 60px;
     margin: 10px 10px 0px 0px;
@@ -91,21 +95,26 @@ button{
 }
 
 .banner{
-    margin: 50px 0px;
+    width: 90%;
+    margin-top: 50px;
 }
 
 .banner img{
-    width: 90%;
+    width: 100%;
     max-height: 50vh;
     object-fit: cover;
     border-radius: 50px;
 }
 
 .section {
-    width: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 50px;
+    margin-top: 50px;
 }
 
 .section h1{
@@ -114,15 +123,12 @@ button{
     border-radius: 10px;
 }
 
-#events .event{
-    width: 80%;
-    background-color: purple;
-}
-
 #events img{
     min-height: 200px;
     max-height: 300px;
-    max-width: 100%;
+    max-width: 80%;
+    border: 2px solid black;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -194,10 +200,6 @@ button{
         display: none;
     }
 
-    .items .arrow-mobile{
-        display: none;
-    }
-
     #beers .items{
         flex-wrap: nowrap;
     }
@@ -209,29 +211,12 @@ button{
         display: none;
     }
 
-    .items .arrow{
-        display: none;
-    }
-
-    .items .arrow-mobile{
-        font-size: xx-large;
-        margin: 20px 0px 20px 20px;
-        padding: 0px 30px;
-        background-color: burlywood;
-    }
-
     .banner{
-        margin: 20px 0px;
+        margin-top: 20px;
     }
 
     .banner img{
-        width: 95%;
         border-radius: 20px;
-    }
-
-    #events .event{
-        max-width: 80%;
-        padding: 10px 10px 5px 10px;
     }
 
     #beers>.items{

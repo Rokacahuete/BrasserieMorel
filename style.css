@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .items{
     display: flex;
     flex-wrap: wrap;
@@ -121,6 +125,10 @@ button{
     padding: 0px 10px;
     border-bottom: 2px solid black;
     border-radius: 10px;
+}
+
+:target{
+    scroll-margin-top: 100px;
 }
 
 #events img{

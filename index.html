@@ -12,12 +12,12 @@
         site:
           title: Brasserie
         events:
-          - name: Anniversaire en portrait !
-            date: Samedi 13 Septembre à 18h
-            img: 13 Septembre.png
           - name: Anniversaire en paysage !
             date: Samedi 13 Septembre à 18h
             img: 13 sept.png
+          - name: Anniversaire en portrait !
+            date: Samedi 13 Septembre à 18h
+            img: 13 Septembre.png
         beers:
           - name: Blonde
           - name: Ambrée
@@ -48,22 +48,16 @@
                     <h1>Brasserie Morel</h1>
                 </span>
                 <div class = "buttons-container not-on-mobile">
-                    <span>
-                        <button><b>Bières</b></button>
-                    </span>
-                    <span>
-                        <button><b>Évènements</b></button>
-                    </span>
-                    <span>
-                        <button><b>Contact</b></button>
-                    </span>
+                    <button onclick = "document.location.href = 'Pages/beers.html'"><b>Bières</b></button>
+                    <button onclick = "document.location.href = '#events'"><b>Évènements</b></button>
+                    <button onclick = "document.location.href = 'Pages/contact.html'"><b>Contact</b></button>
                 </div>
             </div>
             <div class = "drop-down-menu centered">
                 <div id = "header-drop-down-menu" style = "gap:0; width: 100%">
-                    <button>Bières</button>
-                    <button>Évènements</button>
-                    <button>Contact</button>
+                    <button onclick = "document.location.href = 'Pages/beers.html'">Bières</button>
+                    <button onclick = "document.location.href = '#events'">Évènements</button>
+                    <button onclick = "document.location.href = 'Pages/contact.html'">Contact</button>
                 </div>
                 <button onclick = "DropDownMenuSwitch()">V</button>
             </div>
@@ -138,7 +132,7 @@
                 </div>
                 <div class = "arrow">RIGHT</div>
             </div>
-            <button>Tous nos points de vente ici</button>
+            <button onclick = "document.location.href = 'Pages/sell-points.html'">Tous nos points de vente ici</button>
         </div>
         <div class = "section" id = "interviews">
             <h1>Interviews</h1>
@@ -159,7 +153,7 @@
                     <p>Lien de l'interview</p>
                 </div>
             </div>
-            <button>Toutes nos interviews</button>
+            <button onclick = "document.location.href = 'Pages/interviews.html'">Toutes nos interviews</button>
         </div>
     </div>
     <footer>

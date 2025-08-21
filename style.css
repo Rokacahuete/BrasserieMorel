@@ -20,10 +20,8 @@ html{
 .centered {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
     flex-direction: column;
-    gap: 20px;
 }
 
 .items .arrow{
@@ -47,14 +45,15 @@ body{
     background-color: lightyellow;
 }
 
-.top{
-    width: 100%;
-    height: auto;
-    background-color: gray;
-    border-radius: 15px;
+h1{
+    font-family: 'Medieval Sharp', sans-serif;
 }
 
-.top .logo{
+button{
+    font-family: "Medieval Sharp";
+}
+
+.logo{
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
@@ -63,12 +62,10 @@ body{
     margin: 10px 30px;
 }
 
-h1{
-    font-family: 'Medieval Sharp', sans-serif;
-}
-
-button{
-    font-family: "Medieval Sharp";
+.top{
+    width: 100%;
+    background-color: gray;
+    border-radius: 15px;
 }
 
 .top .buttons-container{
@@ -190,16 +187,43 @@ button{
     background-color: orange;
 }
 
-.bottom {
+.bottom{
+    background-color: gray;
+    text-align: center;
     margin-top: 100px;
     width: 100%;
-    height: auto;
-    background-color: brown;
+    border-radius: 15px;
+    padding-block: 20px;
 }
 
-.bottom .items>div{
-    margin: 20px 50px;
-    background-color: white;
+.bottom .title{
+    font-family: "Medieval Sharp";
+    background-color: rgb(170, 170, 170);
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+}
+
+.bottom .item{
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 15px;
+    max-width: 250px;
+    height: auto;
+    padding: 10px;
+    margin: 3px;
+}
+
+.bottom p{
+    width: 250px;
+}
+
+.bottom .social-media{
+    width: 40px;
+    height: 40px;
 }
 
 /* Computer */

@@ -28,8 +28,10 @@
           - name: Blonde IPA
             img: WhatsApp Image 2024-10-03 à 16.19.23_7b56a90e.jpg
         sell_points:
-          - name: Brasserie
-            address: https://www.google.fr/maps/place/Brasserie+Morel/@48.3609521,2.1297065,20z/data=!4m6!3m5!1s0x47e5cb43d1525c23:0x1724f4a583d288dc!8m2!3d48.3609521!4d2.1298999!16s%2Fg%2F11r88b_ck3?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D
+          - name: Brasserie Morel
+            address: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d662.744425765011!2d2.1298999000000087!3d48.36095209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5cb43d1525c23%3A0x1724f4a583d288dc!2sBrasserie%20Morel!5e0!3m2!1sfr!2sfr!4v1755877359428!5m2!1sfr!2sfr
+          - name: Brasserie Morel Morel Morel
+            address: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d662.744425765011!2d2.1298999000000087!3d48.36095209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5cb43d1525c23%3A0x1724f4a583d288dc!2sBrasserie%20Morel!5e0!3m2!1sfr!2sfr!4v1755877359428!5m2!1sfr!2sfr
         interviews:
           - name: Interview que j'ai trouvé
             link: https://youtu.be/v79D11sbnuQ?si=8V_DJTpc3T0rRnDi
@@ -76,8 +78,8 @@
                 <h2 id = "event-title">Event Name</h2>
                 <div id = "event-date">00/00</div>
                 <div class = "items">
-                    <div class = "arrow" onclick = "UpdateEvent(-1)">LEFT</div>
-                    <div class = "arrow" onclick = "UpdateEvent(1)">RIGHT</div>
+                    <button class = "arrow" onclick = "UpdateEvent(-1)">LEFT</button>
+                    <button class = "arrow" onclick = "UpdateEvent(1)">RIGHT</button>
                 </div>
             </div>
         </div>
@@ -117,20 +119,11 @@
         </div>
         <div class = "section" id = "sell-points">
             <h1>Nos points de vente</h1>
+            <div class = "items carousel" id = "sell-point-list">
+            </div>
             <div class = "items">
-                <div class = "arrow">LEFT</div>
-                <div class = "carousel">
-                    <div class = "sell-point">
-                        <h2>Point de vente 1</h2>
-                    </div>
-                    <div class = "sell-point not-on-mobile">
-                        <h2>Point de vente 2</h2>
-                    </div>
-                    <div class = "sell-point not-on-mobile">
-                        <h2>Point de vente 3</h2>
-                    </div>
-                </div>
-                <div class = "arrow">RIGHT</div>
+                <button class = "arrow">RIGHT</button>
+                <button class = "arrow">LEFT</button>
             </div>
             <button onclick = "document.location.href = 'Pages/sell-points.html'">Tous nos points de vente ici</button>
         </div>

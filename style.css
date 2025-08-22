@@ -9,6 +9,28 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    margin: 8px;
+    background-color: lightyellow;
+}
+
+h1{
+    font-family: 'Medieval Sharp', sans-serif;
+}
+
+button{
+    font-family: "Medieval Sharp";
+    color: black;
+    
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    margin-block: 0px 25px;
+}
+
 .items{
     display: flex;
     flex-wrap: wrap;
@@ -25,12 +47,7 @@ html{
 }
 
 .items .arrow{
-    background-color: lightgray;
-    border: 2px solid gray;
-    border-radius: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100px;
     height: 30px;
     margin: 25px 10px 15px 10px
@@ -38,19 +55,6 @@ html{
 
 .hide{
     display: none;
-}
-
-body{
-    margin: 8px;
-    background-color: lightyellow;
-}
-
-h1{
-    font-family: 'Medieval Sharp', sans-serif;
-}
-
-button{
-    font-family: "Medieval Sharp";
 }
 
 .logo{
@@ -83,6 +87,7 @@ button{
 
 .top .drop-down-menu button{
     background-color: rgb(170, 170, 170);
+    border-color: rgb(63, 63, 63);
     height: 35px;
     width: 80%;
     margin: 5px;
@@ -172,17 +177,26 @@ button{
     display: flex;
 }
 
-.carousel .sell-point{
-    padding: 20px;
-    margin: 0px 20px;
-    width: 20vw;
-    height: 50vh;
-    background-color: purple;
+.sell-point{
+    width: 200px;
+    height: 350px;
+    background-color: rgb(233, 233, 233);
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px 10px 10px 10px;
+}
+
+.sell-point iframe{
+    border-radius: 10px;
+    flex: 1;
 }
 
 .interview{
-    background-color: lightgray;
-    border: 2px solid gray;
+    background-color: rgb(233, 233, 233);
+    border: 2px solid lightgray;
     border-radius: 20px;
     width: 300px;
     margin: 0px 10px 10px 10px;
@@ -194,16 +208,6 @@ button{
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 5px;
-}
-
-#interviews button{
-    background-color: lightgray;
-    border: 2px solid gray;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    margin-block: 0px 25px;
 }
 
 .bottom{

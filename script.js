@@ -5,6 +5,7 @@ function Ready() {
     LoadYML();
     UpdateEvent(0);
     UpdateEventBeers(0);
+    LoadSellPoints();
     LoadInterviews();
 }
 
@@ -65,6 +66,30 @@ function UpdateEventBeers(pIndex) {
 
     if (beerTimeout) clearTimeout(beerTimeout);
     beerTimeout = setTimeout(() => UpdateEventBeers(1), 3_500);
+}
+
+// Sell points
+function LoadSellPoints() {
+    if (!config.sell_points) return;
+    
+    let lSellPoints = document.getElementById("sell-point-list");
+    let lName, lAddress, lEmbedUrl;
+    config.sell_points.forEach(lPoint => {
+        lName = lPoint.name;
+        lEmbedUrl = lPoint.address;
+
+        lSellPoints.innerHTML += `
+        <div class = "sell-point">
+            <h2>${lName}</h2>
+            <iframe
+                src = "${lEmbedUrl}"
+                allowfullscreen = ""
+                loading = "lazy"
+                referrerpolicy = "no-referrer">
+            </iframe>
+        </div>
+        `;
+    });
 }
 
 // Interviews

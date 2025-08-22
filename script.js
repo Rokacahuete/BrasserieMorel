@@ -5,6 +5,7 @@ function Ready() {
     LoadYML();
     UpdateEvent(0);
     UpdateEventBeers(0);
+    LoadInterviews();
 }
 
 let dropDownMenuIsOpen = false;
@@ -64,6 +65,27 @@ function UpdateEventBeers(pIndex) {
 
     if (beerTimeout) clearTimeout(beerTimeout);
     beerTimeout = setTimeout(() => UpdateEventBeers(1), 3_500);
+}
+
+// Interviews
+function LoadInterviews() {
+    if (!config.interviews) return;
+
+    let lInterviews = document.getElementById("interview-list");
+    let lName, lUrl, lImgLink;
+
+    config.interviews.forEach(lInterview => {
+        lName = lInterview.name;
+        lUrl = new URL(lInterview.link);
+        if (lUrl.hostname == "youtu.be") lImgLink = lUrl.pathname.slice(1);
+        else lImgLink = lUrl.searchParams.get("v");
+        lInterviews.innerHTML += `
+        <div class = "interview" onclick = "window.open('${lInterview.link}', '_blank')">
+            <h2>${lName}</h2>
+            <img src = "https://img.youtube.com/vi/${lImgLink}/mqdefault.jpg">
+        </div>
+        `
+    });
 }
 
 

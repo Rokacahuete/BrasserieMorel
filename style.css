@@ -181,10 +181,29 @@ button{
 }
 
 .interview{
-    padding: 20px 0px;
-    width: 20vw;
-    margin: 0px 20px;
-    background-color: orange;
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 20px;
+    width: 300px;
+    margin: 0px 10px 10px 10px;
+}
+
+.interview img{
+    width: 95%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#interviews button{
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin-block: 0px 25px;
 }
 
 .bottom{

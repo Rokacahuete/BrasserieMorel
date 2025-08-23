@@ -159,18 +159,24 @@ button{
     object-fit: cover;
 }
 
-#beer-dispensers .item{
-    flex: 1 1 0;
-    padding: 20px;
-    min-width: 0;
-    max-width: 80%;
-    background-color: coral;
+.dispenser{
+    background-color: rgb(233, 233, 233);
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    width: 300px;
+    margin: 0px 3% 20px 3%;
 }
 
-#beer-dispensers .item img{
-    max-width: 100%;
-    height: 500px;
+.dispenser img{
+    width: 95%;
+    height: 350px;
+    margin-bottom: 5px;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.beer-dispensers button{
+    margin-top: 10px;
 }
 
 #sell-points .carousel{

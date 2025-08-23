@@ -9,6 +9,10 @@ html{
     scroll-behavior: smooth;
 }
 
+:target{
+    scroll-margin-top: 100px;
+}
+
 body{
     margin: 8px;
     background-color: lightyellow;
@@ -39,13 +43,6 @@ button{
     width: 100%;
 }
 
-.centered {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-}
-
 .items .arrow{
     display: flex;
     width: 100px;
@@ -53,8 +50,19 @@ button{
     margin: 25px 10px 15px 10px
 }
 
+.centered {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
 .hide{
     display: none;
+}
+
+.carousel{
+    display: flex;
 }
 
 .logo{
@@ -129,11 +137,7 @@ button{
     border-radius: 10px;
 }
 
-:target{
-    scroll-margin-top: 100px;
-}
-
-#events img{
+.events img{
     min-height: 200px;
     max-height: 300px;
     max-width: 80%;
@@ -142,20 +146,24 @@ button{
     object-fit: cover;
 }
 
-#beers>.items{
-    gap: 20px;
+.beer{
+    background-color: rgb(233, 233, 233);
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0px 10px 20px 10px;
+    width: 400px;
 }
 
-#beers .item{
-    min-width: 0;
-    max-width: 80%;
-    background-color: yellow;
+@media(min-width: 865px){
+    .beer-event{
+        width: 240px;
+    }
 }
 
-#beers img{
-    min-width: 0;
+.beer img {
     width: 100%;
-    height: 500px;
+    height: 350px;
     object-fit: cover;
 }
 
@@ -177,10 +185,6 @@ button{
 
 .beer-dispensers button{
     margin-top: 10px;
-}
-
-#sell-points .carousel{
-    display: flex;
 }
 
 .sell-point{
@@ -260,10 +264,6 @@ button{
     .top .drop-down-menu{
         display: none;
     }
-
-    #beers .items{
-        flex-wrap: nowrap;
-    }
 }
 
 /* Mobile */
@@ -278,19 +278,5 @@ button{
 
     .banner img{
         border-radius: 20px;
-    }
-
-    #beers>.items{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #beers .item{
-        width: 80%;
-        padding: 0px 10px 5px 10px;
-    }
-
-    #beers>.items>div{
-        width: 100%;
     }
 }

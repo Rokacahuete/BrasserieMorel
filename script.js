@@ -1,3 +1,8 @@
+/// Consts
+const SWITCH_TIME_ELEMENT = 3_500;
+
+/// Variables
+
 /// Functions
 
 function Ready() {
@@ -43,7 +48,7 @@ function UpdateEvent(pIndex) {
     L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
 
     if (eventTimeout) clearTimeout(eventTimeout);
-    // eventTimeout = setTimeout(() => UpdateEvent(1), 3_500);
+    eventTimeout = setTimeout(() => UpdateEvent(1), SWITCH_TIME_ELEMENT);
 }
 
 // Beers
@@ -65,7 +70,7 @@ function UpdateEventBeers(pIndex) {
     L_EVENT_BEER_IMAGE.src = `Images/${lBeer.img}`;
 
     if (beerTimeout) clearTimeout(beerTimeout);
-    beerTimeout = setTimeout(() => UpdateEventBeers(1), 3_500);
+    beerTimeout = setTimeout(() => UpdateEventBeers(1), SWITCH_TIME_ELEMENT);
 }
 
 // Sell points

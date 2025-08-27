@@ -1,5 +1,15 @@
+/// TEMPO
+function RERERE(e) {
+    const el = document.querySelector(".tempo-text");
+    el.classList.remove("temp-anim");
+    void el.offsetWidth;
+    el.classList.add("jump");
+
+}
+document.querySelector(".tempo-text").addEventListener("animationend", (e) => e.target.remove());
+
 /// Consts
-const SWITCH_TIME_ELEMENT = 3_500;
+const SWITCH_TIME_ELEMENT_DEFAULT = 3_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_000;
 
 /// Variables
 
@@ -30,7 +40,7 @@ function LoadYML() {
 let AEvents = [];
 let eventIndex = 0;
 let eventTimeout;
-function UpdateEvent(pIndex) {
+function UpdateEvent(pIndex, pIsButton) {
     if (!config.events) return document.getElementById("events").remove();
 
     const L_EVENTS_COUNT = config.events.length;
@@ -48,13 +58,13 @@ function UpdateEvent(pIndex) {
     L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
 
     if (eventTimeout) clearTimeout(eventTimeout);
-    eventTimeout = setTimeout(() => UpdateEvent(1), SWITCH_TIME_ELEMENT);
+    eventTimeout = setTimeout(() => UpdateEvent(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
 }
 
 // Beers
 let beerIndex = 0;
 let beerTimeout;
-function UpdateEventBeers(pIndex) {
+function UpdateEventBeers(pIndex, pIsButton = false) {
     if (!config.event_beers) return document.getElementById("beer-event").remove();
 
     const L_BEERS_COUNT = config.event_beers.length;
@@ -70,7 +80,7 @@ function UpdateEventBeers(pIndex) {
     L_EVENT_BEER_IMAGE.src = `Images/${lBeer.img}`;
 
     if (beerTimeout) clearTimeout(beerTimeout);
-    beerTimeout = setTimeout(() => UpdateEventBeers(1), SWITCH_TIME_ELEMENT);
+    beerTimeout = setTimeout(() => UpdateEventBeers(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
 }
 
 // Sell points

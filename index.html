@@ -12,7 +12,7 @@
         site:
           title: Brasserie
         events:
-          - name: Anniversaire en paysage !
+          - name: Anniversaire de la Brasserie !
             date: Samedi 13 Septembre à 18h
             img: 13 sept.png
           - name: Soirée dégustation à la Brasserie
@@ -26,18 +26,28 @@
           - name: Brune
         event_beers:
           - name: Blonde IPA
-            img: WhatsApp Image 2024-10-03 à 16.19.23_7b56a90e.jpg
+            img: Beer-Taverniere.png
         sell_points:
           - name: Brasserie Morel
             address: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d662.744425765011!2d2.1298999000000087!3d48.36095209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5cb43d1525c23%3A0x1724f4a583d288dc!2sBrasserie%20Morel!5e0!3m2!1sfr!2sfr!4v1755877359428!5m2!1sfr!2sfr
-          - name: Brasserie Morel Morel Morel
-            address: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d662.744425765011!2d2.1298999000000087!3d48.36095209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5cb43d1525c23%3A0x1724f4a583d288dc!2sBrasserie%20Morel!5e0!3m2!1sfr!2sfr!4v1755877359428!5m2!1sfr!2sfr
         interviews:
-          - name: Interview que j'ai trouvé
-            link: https://youtu.be/v79D11sbnuQ?si=8V_DJTpc3T0rRnDi
+          - name: On brasse une bière tourbée
+            link: https://www.youtube.com/watch?v=pAOyxPwssX0
+          - name: Mag Essonne
+            link: https://www.youtube.com/watch?v=v79D11sbnuQ
+          - name: Foire de l'Essonne Verte
+            link: https://www.youtube.com/watch?v=iX_ii8yXHso
     </script>
 </head>
 <body>
+    <!-- TEMPO -->
+    <div class="centered">
+        <div class = "temp-anim tempo-text">
+            Ce site est actuellement en développement, merci pour votre indulgence
+            <button onclick = "RERERE()">X</button>
+        </div>
+    </div>
+    <!-- END -->
     <header>
         <div class = "top">
             <div class = "items">
@@ -50,16 +60,16 @@
                     <h1>Brasserie Morel</h1>
                 </span>
                 <div class = "buttons-container not-on-mobile">
-                    <button onclick = "document.location.href = 'Pages/beers.html'"><b>Bières</b></button>
+                    <button><b>Bières</b></button><!-- onclick = "document.location.href = 'Pages/beers.html'" -->
                     <button onclick = "document.location.href = '#events'"><b>Évènements</b></button>
-                    <button onclick = "document.location.href = 'Pages/contact.html'"><b>Contact</b></button>
+                    <button><b>Contact</b></button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
                 </div>
             </div>
             <div class = "drop-down-menu centered">
                 <div id = "header-drop-down-menu" style = "width: 100%">
-                    <button onclick = "document.location.href = 'Pages/beers.html'">Bières</button>
+                    <button>Bières</button><!-- onclick = "document.location.href = 'Pages/beers.html'" -->
                     <button onclick = "document.location.href = '#events'">Évènements</button>
-                    <button onclick = "document.location.href = 'Pages/contact.html'">Contact</button>
+                    <button>Contact</button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
                 </div>
                 <button onclick = "DropDownMenuSwitch()">V</button>
             </div>
@@ -78,8 +88,8 @@
                 <h2 id = "event-title">Event Name</h2>
                 <div id = "event-date">00/00</div>
                 <div class = "items">
-                    <button class = "arrow" onclick = "UpdateEvent(-1)">LEFT</button>
-                    <button class = "arrow" onclick = "UpdateEvent(1)">RIGHT</button>
+                    <button class = "arrow" onclick = "UpdateEvent(-1, true)">Précédent</button>
+                    <button class = "arrow" onclick = "UpdateEvent(1, true)">Suivant</button>
                 </div>
             </div>
         </div>
@@ -87,16 +97,17 @@
             <h1>Nos bières</h1>
             <div class = "items">
                 <div class = "beer">
-                    <img src = "Images/WhatsApp Image 2024-11-13 à 15.30.08_f099af88.jpg">
+                    <img src = "Images/beers.png">
                     <h2>La gamme permanante</h2>
+                    <div class = "text">Blanche - Blonde - Brune - Ambrée - Triple</div>
                 </div>
                 <div class = "beer beer-event" id = "beer-event">
                     <img id = "event-beer-img" src = "Images/IMG-20241113-WA0001.jpg">
                     <h2>Et en ce moment</h2>
                     <div id = "event-beer-name">Name</div>
                     <div class = "items">
-                        <button class = "arrow">LEFT</button>
-                        <button class = "arrow">RIGHT</button>
+                        <button class = "arrow" onclick = "UpdateEventBeers(-1, true)">Précédente</button>
+                        <button class = "arrow" onclick = "UpdateEventBeers(1, true)">Suivante</button>
                     </div>
                 </div>
             </div>
@@ -106,30 +117,30 @@
             <div class = "items">
                 <div class = "dispenser">
                     <h2>Tireuse simple</h2>
-                    <img src = "Images/tireuse-biere.jpg">
+                    <img src = "Images/WhatsApp Image 2025-08-24 à 11.49.05_59e1f832.jpg">
                 </div>
                 <div class = "dispenser">
                     <h2>Tireuse double</h2>
-                    <img src = "Images/tireuse-biere.jpg">
+                    <img src = "Images/WhatsApp Image 2025-08-24 à 11.49.39_e365d1d5.jpg">
                 </div>
             </div>
-            <button>Installer une tireuse</button>
+            <button onclick = "document.location.href = 'Documents/Installation tireuse.pptx'">Installer une tireuse</button>
         </div>
         <div class = "section" id = "sell-points">
             <h1>Nos points de vente</h1>
             <div class = "items carousel" id = "sell-point-list">
             </div>
-            <div class = "items">
+            <!-- <div class = "items">
                 <button class = "arrow">RIGHT</button>
                 <button class = "arrow">LEFT</button>
-            </div>
-            <button onclick = "document.location.href = 'Pages/sell-points.html'">Tous nos points de vente ici</button>
+            </div> -->
+            <!-- <button onclick = "document.location.href = 'Pages/sell-points.html'">Tous nos points de vente ici</button> -->
         </div>
         <div class = "section" id = "interviews">
             <h1>Interviews</h1>
             <div class = "items" id = "interview-list">
             </div>
-            <button onclick = "document.location.href = 'Pages/interviews.html'">Toutes nos interviews</button>
+            <!-- <button onclick = "document.location.href = 'Pages/interviews.html'">Toutes nos interviews</button> -->
         </div>
     </div>
     <footer>

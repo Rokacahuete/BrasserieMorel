@@ -25,6 +25,7 @@
     position: fixed;
 }
 .tempo-text button{
+    --hover-color: rgb(255, 94, 94);
     margin: 0;
     width: 30px;
     height: 30px;
@@ -51,6 +52,7 @@ html{
 body{
     margin: 8px;
     background-color: lightyellow;
+    overflow-x: hidden;
 }
 
 h1{
@@ -67,6 +69,14 @@ button{
     align-items: center;
     padding: 5px 10px;
     margin-block: 0px 25px;
+
+    --hover-color: gray;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+    color: white;
 }
 
 .items{
@@ -119,6 +129,7 @@ button{
 }
 
 .top .buttons-container button{
+    --hover-color: darkgray;
     background-color: lightgray;
     border: 2px solid black;
     width: 100px;
@@ -126,8 +137,13 @@ button{
     margin: 10px 10px 0px 0px;
     border-radius: 15px;
 }
+.top .buttons-container button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+}
 
 .top .drop-down-menu button{
+    --hover-color: rgb(88, 88, 88);
     background-color: rgb(170, 170, 170);
     border-color: rgb(63, 63, 63);
     height: 35px;
@@ -135,11 +151,20 @@ button{
     margin: 5px;
     border-radius: 15px;
 }
+.top .drop-down-menu button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+}
 
 .top .drop-down-menu>button{
-    background-color: transparent;
+    --hover-color: rgb(105, 105, 105);
+    background-color: gray;
     height: 25px;
     width: calc(100% - 10px);
+}
+.top .drop-down-menu>button:hover{
+    transform: scaleX(1.037) scaleY(1.1);
+    background-color: var(--hover-color);
 }
 
 .banner{
@@ -303,6 +328,11 @@ button{
 .bottom .social-media{
     width: 40px;
     height: 40px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.bottom .social-media:hover{
+    transform: scale(1.1);
+    background-color: darkgray;
 }
 
 /* Computer */

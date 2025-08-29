@@ -18,8 +18,8 @@ const SWITCH_TIME_ELEMENT_DEFAULT = 3_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_
 function Ready() {
     DropDownMenuSwitch();
     LoadYML();
-    UpdateEvent(0);
-    UpdateEventBeers(0);
+    LoadEvents();
+    LoadEventBeers();
     LoadSellPoints();
     LoadInterviews();
 }
@@ -40,8 +40,12 @@ function LoadYML() {
 let AEvents = [];
 let eventIndex = 0;
 let eventTimeout;
-function UpdateEvent(pIndex, pIsButton) {
+function LoadEvents() {
     if (!config.events) return document.getElementById("events").remove();
+    if (config.events.length <= 1) document.getElementById("events-arrows").remove();
+    UpdateEvent(0);
+}
+function UpdateEvent(pIndex, pIsButton) {
 
     const L_EVENTS_COUNT = config.events.length;
     const L_EVENT_TITLE = document.getElementById("event-title");
@@ -64,8 +68,12 @@ function UpdateEvent(pIndex, pIsButton) {
 // Beers
 let beerIndex = 0;
 let beerTimeout;
-function UpdateEventBeers(pIndex, pIsButton = false) {
+function LoadEventBeers() {
     if (!config.event_beers) return document.getElementById("beer-event").remove();
+    if (config.event_beers.length <= 1) document.getElementById("event-beers-arrows").remove();
+    UpdateEventBeers(0);
+}
+function UpdateEventBeers(pIndex, pIsButton = false) {
 
     const L_BEERS_COUNT = config.event_beers.length;
     const L_EVENT_BEER_NAME = document.getElementById("event-beer-name");
@@ -86,6 +94,12 @@ function UpdateEventBeers(pIndex, pIsButton = false) {
 // Sell points
 function LoadSellPoints() {
     if (!config.sell_points) return;
+
+    const N_SELL_POINTS = config.sell_points.length;
+    if (N_SELL_POINTS <= 3) {
+        document.getElementById("all-sell-points-button").remove();
+        if (N_SELL_POINTS <= 1) document.getElementById("sell-points-arrows").remove();
+    }
     
     let lSellPoints = document.getElementById("sell-point-list");
     let lName, lAddress, lEmbedUrl;
@@ -111,10 +125,14 @@ function LoadSellPoints() {
 function LoadInterviews() {
     if (!config.interviews) return;
 
-    let lInterviews = document.getElementById("interview-list");
-    let lName, lUrl, lImgLink;
+    const N_INTERVIEWS = config.interviews.length, N_MAX = 3;
+    if (N_INTERVIEWS <= N_MAX) document.getElementById("all-interviews-button").remove();
 
-    config.interviews.forEach(lInterview => {
+    let lInterviews = document.getElementById("interview-list");
+    let lLength = Math.min(N_INTERVIEWS, N_MAX);
+    let lName, lUrl, lImgLink, lInterview;
+    for (let i = 0; i < lLength; i++) {
+        lInterview = config.interviews[i];
         lName = lInterview.name;
         lUrl = new URL(lInterview.link);
         if (lUrl.hostname == "youtu.be") lImgLink = lUrl.pathname.slice(1);
@@ -125,7 +143,7 @@ function LoadInterviews() {
             <img src = "https://img.youtube.com/vi/${lImgLink}/mqdefault.jpg">
         </div>
         `
-    });
+    };
 }
 
 

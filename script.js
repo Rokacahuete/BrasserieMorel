@@ -9,7 +9,7 @@ function RERERE(e) {
 document.querySelector(".tempo-text").addEventListener("animationend", (e) => e.target.remove());
 
 /// Consts
-const SWITCH_TIME_ELEMENT_DEFAULT = 3_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_000;
+const SWITCH_TIME_ELEMENT_DEFAULT = 5_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_000;
 
 /// Variables
 
@@ -46,8 +46,8 @@ function LoadEvents() {
     UpdateEvent(0);
 }
 function UpdateEvent(pIndex, pIsButton) {
-
     const L_EVENTS_COUNT = config.events.length;
+    const L_CONTAINER = document.getElementById("event-container");
     const L_EVENT_TITLE = document.getElementById("event-title");
     const L_EVENT_DATE = document.getElementById("event-date");
     const L_EVENT_IMAGE = document.getElementById("event-img");
@@ -59,7 +59,25 @@ function UpdateEvent(pIndex, pIsButton) {
 
     L_EVENT_TITLE.innerHTML = lEvent.name;
     L_EVENT_DATE.innerHTML = lEvent.date;
-    L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
+
+    if (pIndex == 0) {
+        L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
+    }
+    else {
+        let lDirection = pIndex > 0 ? "right" : "left";
+        let lNext = document.createElement("img");
+        lNext.src = `Images/${lEvent.img}`;
+        lNext.id = "event-img";
+        lNext.className = `start-${lDirection}`;
+        L_CONTAINER.insertBefore(lNext, L_EVENT_IMAGE);
+        
+        void lNext.offsetWidth;
+        lNext.classList.add(`enter`);
+        void L_EVENT_IMAGE.offsetWidth;
+        L_EVENT_IMAGE.classList.add(`exit-${lDirection}`);
+        L_EVENT_IMAGE.addEventListener("transitionend", () => L_EVENT_IMAGE.remove());
+    }
+    
 
     if (eventTimeout) clearTimeout(eventTimeout);
     eventTimeout = setTimeout(() => UpdateEvent(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
@@ -74,7 +92,6 @@ function LoadEventBeers() {
     UpdateEventBeers(0);
 }
 function UpdateEventBeers(pIndex, pIsButton = false) {
-
     const L_BEERS_COUNT = config.event_beers.length;
     const L_EVENT_BEER_NAME = document.getElementById("event-beer-name");
     const L_EVENT_BEER_IMAGE = document.getElementById("event-beer-img");

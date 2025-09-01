@@ -110,12 +110,14 @@ function LoadSellPoints() {
         lSellPoints.innerHTML += `
         <div class = "sell-point">
             <h2>${lName}</h2>
-            <iframe
-                src = "${lEmbedUrl}"
-                allowfullscreen = ""
-                loading = "lazy"
-                referrerpolicy = "no-referrer">
-            </iframe>
+            <div class = "img-container">
+                <iframe
+                    src = "${lEmbedUrl}"
+                    allowfullscreen = ""
+                    loading = "lazy"
+                    referrerpolicy = "no-referrer">
+                </iframe>
+            </div>
         </div>
         `;
     });
@@ -138,9 +140,11 @@ function LoadInterviews() {
         if (lUrl.hostname == "youtu.be") lImgLink = lUrl.pathname.slice(1);
         else lImgLink = lUrl.searchParams.get("v");
         lInterviews.innerHTML += `
-        <div class = "interview" onclick = "window.open('${lInterview.link}', '_blank')">
+        <div class = "centered interview">
             <h2>${lName}</h2>
-            <img src = "https://img.youtube.com/vi/${lImgLink}/mqdefault.jpg">
+            <div class = "img-container">
+                <img src = "https://img.youtube.com/vi/${lImgLink}/mqdefault.jpg" onclick = "window.open('${lInterview.link}', '_blank')">
+            </div>
         </div>
         `
     };

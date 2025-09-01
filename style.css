@@ -271,9 +271,14 @@ button:hover{
     margin: 0px 10px 10px 10px;
 }
 
+.sell-point .img-container{
+    flex: 1;
+}
+
 .sell-point iframe{
     border-radius: 10px;
-    flex: 1;
+    width: 100%;
+    height: 100%;
 }
 
 .interview{
@@ -284,12 +289,21 @@ button:hover{
     margin: 0px 10px 10px 10px;
 }
 
-.interview img{
+.interview .img-container{
     width: 95%;
     height: 150px;
-    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    transition: transform .3s;
+}
+.img-container img:hover{
+    transform: scale(1.1);
 }
 
 .bottom{

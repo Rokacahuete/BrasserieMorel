@@ -51,8 +51,20 @@ html{
 
 body{
     margin: 8px;
-    background-color: lightyellow;
     overflow-x: hidden;
+}
+
+body::before{
+    background: url("Images/WhatsApp Image 2024-08-16 à 18.05.35_e745f811.jpg") no-repeat center center / cover; /* WhatsApp Image 2025-08-02 à 10.30.21_23ef4148 IMG-20250824-WA0004 WhatsApp Image 2024-07-03 à 21.35.35_72a6e289  */
+    filter: opacity(.5);
+    position: fixed;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 h1{

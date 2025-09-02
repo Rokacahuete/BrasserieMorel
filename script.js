@@ -140,24 +140,26 @@ function LoadSellPoints() {
     }
     
     let lSellPoints = document.getElementById("sell-point-list");
-    let lName, lAddress, lEmbedUrl;
+    let lName, lImg, lAddress, lEmbedUrl;
     config.sell_points.forEach(lPoint => {
         lName = lPoint.name;
+        lImg = lPoint.img;
         lEmbedUrl = lPoint.address;
 
         lSellPoints.innerHTML += `
         <div class = "sell-point">
             <h2>${lName}</h2>
             <div class = "img-container">
-                <iframe
-                    src = "${lEmbedUrl}"
-                    allowfullscreen = ""
-                    loading = "lazy"
-                    referrerpolicy = "no-referrer">
-                </iframe>
+                <img src = "Images/Logo/${lImg}">
             </div>
         </div>
         `;
+                // <iframe
+                //     src = "${lEmbedUrl}"
+                //     allowfullscreen = ""
+                //     loading = "lazy"
+                //     referrerpolicy = "no-referrer">
+                // </iframe>
     });
 }
 

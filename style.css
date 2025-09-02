@@ -220,7 +220,7 @@ button:hover{
     border: 2px solid black;
     border-radius: 10px;
     object-fit: cover;
-    transition: transform 1s cubic-bezier(0.65, -0.7, 0.35, 1.7);
+    transition: transform 1s cubic-bezier(.65, -.7, .35, 1.7);
 }
 
 img.start-right{
@@ -241,6 +241,19 @@ img.exit-right{
 img.exit-left{
     position: absolute;
     transform: translateX(100vw);
+}
+
+.events h2{
+    transition: transform .5s cubic-bezier(.5, 2.5, .01, 1), opacity .3s;
+}
+
+.events h2.enter{
+    transform: scale(1);
+    opacity: 1;
+}
+.events h2.exit{
+    transform: scale(.8);
+    opacity: 0;
 }
 
 .beer{

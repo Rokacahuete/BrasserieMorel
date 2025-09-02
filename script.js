@@ -57,30 +57,51 @@ function UpdateEvent(pIndex, pIsButton) {
     else if (eventIndex >= L_EVENTS_COUNT) eventIndex = 0;
     let lEvent = config.events[eventIndex];
 
-    L_EVENT_TITLE.innerHTML = lEvent.name;
     L_EVENT_DATE.innerHTML = lEvent.date;
 
     if (pIndex == 0) {
+        L_EVENT_TITLE.innerHTML = lEvent.name;
         L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
     }
     else {
         let lDirection = pIndex > 0 ? "right" : "left";
         let lNext = document.createElement("img");
         lNext.src = `Images/${lEvent.img}`;
-        lNext.id = "event-img";
-        lNext.className = `start-${lDirection}`;
         L_CONTAINER.insertBefore(lNext, L_EVENT_IMAGE);
-        
-        void lNext.offsetWidth;
-        lNext.classList.add(`enter`);
-        void L_EVENT_IMAGE.offsetWidth;
-        L_EVENT_IMAGE.classList.add(`exit-${lDirection}`);
-        L_EVENT_IMAGE.addEventListener("transitionend", () => L_EVENT_IMAGE.remove());
+        AnimEventImage(L_EVENT_IMAGE, lNext, lDirection);
+        AnimEventName(L_EVENT_TITLE, lEvent.name);
+        L_EVENT_TITLE.offsetWidth;
+        L_EVENT_TITLE.classList.add("exit");
+        let LExitListener = () => {
+            L_EVENT_TITLE.classList.remove("exit");
+            L_EVENT_TITLE.removeEventListener("animationend", LExitListener);
+            L_EVENT_TITLE.innerHTML = lEvent.name;
+            L_EVENT_TITLE.offsetHeight;
+            L_EVENT_TITLE.classList.add("enter");
+            L_EVENT_TITLE.addEventListener("transitionend", () => LEnterLister);
+        }
+        let LEnterLister = () => {
+            L_EVENT_TITLE.removeEventListener("transitionend", LEnterLister);
+        }
+        L_EVENT_TITLE.addEventListener("transitionend", LExitListener);
     }
     
-
     if (eventTimeout) clearTimeout(eventTimeout);
     eventTimeout = setTimeout(() => UpdateEvent(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
+}
+
+function AnimEventImage(pImage, pNext, pDirection) {
+    pNext.id = "event-img";
+    pNext.className = `start-${pDirection}`;
+    
+    void pNext.offsetWidth;
+    pNext.classList.add("enter");
+    void pImage.offsetWidth;
+    pImage.classList.add(`exit-${pDirection}`);
+    pImage.addEventListener("transitionend", () => pImage.remove());
+}
+
+function AnimEventName(pTitle, pText) {
 }
 
 // Beers

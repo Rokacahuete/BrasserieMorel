@@ -179,6 +179,30 @@ button:hover{
     background-color: var(--hover-color);
 }
 
+.top .medailles-container{
+    display: flex;
+    margin: auto;
+}
+
+.medaille{
+    padding-inline: 5px;
+}
+
+.medaille>img{
+    height: 80px;
+    width: auto;
+}
+
+.medaille>p{
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .6s, transform .3s cubic-bezier(.8, 1.5, 1, 1);
+    padding: 5px 10px;
+    margin-top: 0px;
+    transform: scaleX(0);
+}
+
 .banner{
     width: 90%;
     margin-top: 50px;
@@ -277,7 +301,7 @@ img.exit-left{
     object-fit: cover;
 }
 
-.beer .text{
+.text{
     font-family: "Medieval Sharp";
     color: black;
     background-color: lightgray;

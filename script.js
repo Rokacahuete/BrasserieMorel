@@ -14,9 +14,8 @@ const SWITCH_TIME_ELEMENT_DEFAULT = 5_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_
 /// Variables
 
 /// Functions
-
 function Ready() {
-    DropDownMenuSwitch();
+    LoadTop();
     LoadYML();
     LoadEvents();
     LoadEventBeers();
@@ -24,16 +23,39 @@ function Ready() {
     LoadInterviews();
 }
 
+let config;
+function LoadYML() {
+    let lYamlText = document.getElementById("config").textContent;
+    config = jsyaml.load(lYamlText); 
+}
+
+// Top
 let dropDownMenuIsOpen = false;
 function DropDownMenuSwitch() {
     const L_ELEMENT = document.getElementById("header-drop-down-menu");
     L_ELEMENT.style.display = dropDownMenuIsOpen = !dropDownMenuIsOpen ? "None" : "";
 }
+function LoadTop() {
+    const L_CONTAINER = document.getElementById("medailles-container");
+    let lImg, lText;
+    [...L_CONTAINER.getElementsByClassName("medaille")].forEach(lChild => {
+        lImg = lChild.querySelector("img");
+        
+        lImg.addEventListener("mouseover", () => {
+            lText = lChild.querySelector("p");
+            void lText.offsetWidth;
+            lText.style.opacity = 1;
+            lText.style.transform = "scaleX(1)";
+        });
+        lImg.addEventListener("mouseout", () => {
+            lText = lChild.querySelector("p");
+            void lText.offsetWidth;
+            lText.style.opacity = 0;
+            lText.style.transform = "scaleX(0)";
+        });
+    });
 
-let config;
-function LoadYML() {
-    let lYamlText = document.getElementById("config").textContent;
-    config = jsyaml.load(lYamlText); 
+    DropDownMenuSwitch();
 }
 
 function Shuffle(pArray) {

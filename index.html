@@ -179,11 +179,11 @@
         </div>
         <div class = "section" id = "sell-points">
             <h1>Nos points de vente</h1>
-            <div class = "items carousel" id = "sell-point-list">
+            <div class = "carousel" id = "sell-point-list">
             </div>
             <div class = "items" id = "sell-points-arrows">
-                <button class = "arrow">RIGHT</button>
-                <button class = "arrow">LEFT</button>
+                <button class = "arrow" onclick = "SwitchSellPoints(-1)">LEFT</button>
+                <button class = "arrow" onclick = "SwitchSellPoints(1)">RIGHT</button>
             </div>
             <button onclick = "document.location.href = 'Pages/sell-points.html'" id = "all-sell-points-button">Tous nos points de vente ici</button>
         </div>

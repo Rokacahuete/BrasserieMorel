@@ -36,6 +36,10 @@ function LoadYML() {
     config = jsyaml.load(lYamlText); 
 }
 
+function Shuffle(pArray) {
+    return pArray.sort((a, b) => Math.random() -.5);
+}
+
 // Events
 let AEvents = [];
 let eventIndex = 0;
@@ -70,20 +74,6 @@ function UpdateEvent(pIndex, pIsButton) {
         L_CONTAINER.insertBefore(lNext, L_EVENT_IMAGE);
         AnimEventImage(L_EVENT_IMAGE, lNext, lDirection);
         AnimEventName(L_EVENT_TITLE, lEvent.name);
-        L_EVENT_TITLE.offsetWidth;
-        L_EVENT_TITLE.classList.add("exit");
-        let LExitListener = () => {
-            L_EVENT_TITLE.classList.remove("exit");
-            L_EVENT_TITLE.removeEventListener("animationend", LExitListener);
-            L_EVENT_TITLE.innerHTML = lEvent.name;
-            L_EVENT_TITLE.offsetHeight;
-            L_EVENT_TITLE.classList.add("enter");
-            L_EVENT_TITLE.addEventListener("transitionend", () => LEnterLister);
-        }
-        let LEnterLister = () => {
-            L_EVENT_TITLE.removeEventListener("transitionend", LEnterLister);
-        }
-        L_EVENT_TITLE.addEventListener("transitionend", LExitListener);
     }
     
     if (eventTimeout) clearTimeout(eventTimeout);
@@ -102,6 +92,20 @@ function AnimEventImage(pImage, pNext, pDirection) {
 }
 
 function AnimEventName(pTitle, pText) {
+    pTitle.offsetWidth;
+    pTitle.classList.add("exit");
+    let LExitListener = () => {
+        pTitle.classList.remove("exit");
+        pTitle.removeEventListener("animationend", LExitListener);
+        pTitle.innerHTML = pText;
+        pTitle.offsetHeight;
+        pTitle.classList.add("enter");
+        pTitle.addEventListener("transitionend", () => LEnterLister);
+    }
+    let LEnterLister = () => {
+        pTitle.removeEventListener("transitionend", LEnterLister);
+    }
+    pTitle.addEventListener("transitionend", LExitListener);
 }
 
 // Beers
@@ -130,37 +134,54 @@ function UpdateEventBeers(pIndex, pIsButton = false) {
 }
 
 // Sell points
+var ASellPoints = [];
+var sellPointsIndex = 1;
 function LoadSellPoints() {
     if (!config.sell_points) return;
+
+    const L_CONTAINER = document.getElementById("sell-point-list");
 
     const N_SELL_POINTS = config.sell_points.length;
     if (N_SELL_POINTS <= 3) {
         document.getElementById("all-sell-points-button").remove();
         if (N_SELL_POINTS <= 1) document.getElementById("sell-points-arrows").remove();
     }
+    let lFirstElement = config.sell_points.shift();
+    Shuffle(config.sell_points);
+    config.sell_points.unshift(lFirstElement);
     
-    let lSellPoints = document.getElementById("sell-point-list");
-    let lName, lImg, lAddress, lEmbedUrl;
+    let lName, lImg, lElement;
     config.sell_points.forEach(lPoint => {
         lName = lPoint.name;
         lImg = lPoint.img;
-        lEmbedUrl = lPoint.address;
 
-        lSellPoints.innerHTML += `
-        <div class = "sell-point">
-            <h2>${lName}</h2>
-            <div class = "img-container">
-                <img src = "Images/Logo/${lImg}">
-            </div>
+        lElement = document.createElement("div");
+        lElement.className = "sell-point hide";
+        lElement.innerHTML = `
+        <h2>${lName}</h2>
+        <div class = "img-container">
+            <img src = "Images/Logo/${lImg}">
         </div>
         `;
-                // <iframe
-                //     src = "${lEmbedUrl}"
-                //     allowfullscreen = ""
-                //     loading = "lazy"
-                //     referrerpolicy = "no-referrer">
-                // </iframe>
+        L_CONTAINER.append(lElement);
+        ASellPoints.push(lElement);
     });
+
+    /// A BEATUFILISER
+    for (let i = 0; i < 3 && i < N_SELL_POINTS; i++) {
+        ASellPoints[i].classList.remove("hide");
+    }
+}
+
+function SwitchSellPoints(pIndex) {
+    for (let i = sellPointsIndex -1; i <= sellPointsIndex + 1; i++) {
+        ASellPoints[i % ASellPoints.length].classList.add("hide");
+    }
+    
+    sellPointsIndex += pIndex;
+    for (let i = sellPointsIndex -1; i <= sellPointsIndex + 1; i++) {
+        ASellPoints[i % ASellPoints.length].classList.remove("hide");
+    }
 }
 
 // Interviews

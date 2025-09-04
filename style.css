@@ -338,6 +338,13 @@ img.exit-left{
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    justify-content: center;
+}
+
+@media(max-width: 900px){
+    .carousel>div:not(:first-child){
+        display: none;
+    }
 }
 
 .sell-point{

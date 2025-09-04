@@ -114,6 +114,8 @@ function AnimEventImage(pImage, pNext, pDirection) {
 }
 
 function AnimEventName(pTitle, pText) {
+    if (pTitle.innerHTML == pText) return;
+    
     pTitle.offsetWidth;
     pTitle.classList.add("exit");
     let LExitListener = () => {
@@ -161,8 +163,6 @@ var sellPointsIndex = 1;
 function LoadSellPoints() {
     if (!config.sell_points) return;
 
-    const L_CONTAINER = document.getElementById("sell-point-list");
-
     const N_SELL_POINTS = config.sell_points.length;
     if (N_SELL_POINTS <= 3) {
         document.getElementById("all-sell-points-button").remove();
@@ -178,31 +178,27 @@ function LoadSellPoints() {
         lImg = lPoint.img;
 
         lElement = document.createElement("div");
-        lElement.className = "sell-point hide";
+        lElement.className = "sell-point";
         lElement.innerHTML = `
         <h2>${lName}</h2>
         <div class = "img-container">
             <img src = "Images/Logo/${lImg}">
         </div>
         `;
-        L_CONTAINER.append(lElement);
         ASellPoints.push(lElement);
     });
-
-    /// A BEATUFILISER
-    for (let i = 0; i < 3 && i < N_SELL_POINTS; i++) {
-        ASellPoints[i].classList.remove("hide");
-    }
+    
+    SwitchSellPoints(0);
 }
 
 function SwitchSellPoints(pIndex) {
-    for (let i = sellPointsIndex -1; i <= sellPointsIndex + 1; i++) {
-        ASellPoints[i % ASellPoints.length].classList.add("hide");
-    }
+    const L_CONTAINER = document.getElementById("sell-point-list");
+    L_CONTAINER.innerHTML = "";
     
     sellPointsIndex += pIndex;
+    if (sellPointsIndex <= 0) sellPointsIndex += ASellPoints.length;
     for (let i = sellPointsIndex -1; i <= sellPointsIndex + 1; i++) {
-        ASellPoints[i % ASellPoints.length].classList.remove("hide");
+        L_CONTAINER.append(ASellPoints[i % ASellPoints.length]);
     }
 }
 

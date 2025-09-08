@@ -23,6 +23,7 @@
     padding: 5px 10px;
     margin-top: 90vh;
     position: fixed;
+    z-index: 999;
 }
 .tempo-text button{
     --hover-color: rgb(255, 94, 94);
@@ -441,14 +442,23 @@ img.exit-left{
     width: 250px;
 }
 
+.bottom .social-medias>a{
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+}
+
 .bottom .social-media{
+    background-color: lightgray;
     width: 40px;
     height: 40px;
+    padding: 8px;
     transition: background-color 0.3s, transform 0.3s;
 }
 .bottom .social-media:hover{
     transform: scale(1.1);
-    background-color: darkgray;
+    background-color: transparent;
 }
 
 /* Computer */

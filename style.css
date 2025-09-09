@@ -123,7 +123,7 @@ button:hover{
 }
 
 .logo{
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.425);
     border: 1px solid black;
     border-radius: 10px;
     width: 100px;
@@ -138,7 +138,8 @@ button:hover{
 
 .top{
     width: 100%;
-    background-color: gray;
+    color: white;
+    background: linear-gradient(105deg, rgba(0, 0, 0, .75) 50%, rgba(0, 0, 63, .75));
     border-radius: 15px;
 }
 
@@ -409,7 +410,7 @@ img.exit-left{
 }
 
 .bottom{
-    background-color: gray;
+    background: linear-gradient(105deg, rgba(0, 0, 63, .75), rgba(0, 0, 0, .75) 50%);
     text-align: center;
     margin-top: 100px;
     width: 100%;

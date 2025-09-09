@@ -149,8 +149,9 @@ button:hover{
 
 .top .buttons-container button{
     --hover-color: darkgray;
-    background-color: lightgray;
-    border: 2px solid black;
+    color: white;
+    background-color: rgba(211, 211, 211, 0.4);
+    border: 2px solid rgba(211, 211, 211, 0.555);
     width: 100px;
     height: 60px;
     margin: 10px 10px 0px 0px;
@@ -159,6 +160,7 @@ button:hover{
 .top .buttons-container button:hover{
     transform: scale(1.1);
     background-color: var(--hover-color);
+    color: black;
 }
 
 .top .drop-down-menu button{
@@ -228,8 +230,9 @@ button:hover{
 }
 
 .section {
-    background-color: white;
-    border: 1px solid lightgray;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+    color: white;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -241,7 +244,7 @@ button:hover{
 
 .section h1{
     padding: 0px 10px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
     border-radius: 10px;
 }
 
@@ -293,8 +296,8 @@ img.exit-left{
 }
 
 .beer{
-    background-color: rgb(233, 233, 233);
-    border: 2px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: 20px;
     padding: 15px;
     margin: 0px 10px 20px 10px;
@@ -326,8 +329,8 @@ img.exit-left{
 }
 
 .dispenser{
-    background-color: rgb(233, 233, 233);
-    border: 2px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: 20px;
     width: 300px;
     margin: 0px 3% 20px 3%;
@@ -362,8 +365,8 @@ img.exit-left{
 .sell-point{
     flex: 0 0 200px;
     height: 300px;
-    background-color: rgb(233, 233, 233);
-    border: 2px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: 20px;
     padding: 15px;
     margin: 0px 10px 20px 10px;
@@ -385,8 +388,8 @@ img.exit-left{
 }
 
 .interview{
-    background-color: rgb(233, 233, 233);
-    border: 2px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: 20px;
     width: 300px;
     margin: 0px 10px 10px 10px;

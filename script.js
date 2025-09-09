@@ -36,24 +36,24 @@ function DropDownMenuSwitch() {
     L_ELEMENT.style.display = dropDownMenuIsOpen = !dropDownMenuIsOpen ? "None" : "";
 }
 function LoadTop() {
-    const L_CONTAINER = document.getElementById("medailles-container");
-    let lImg, lText;
-    [...L_CONTAINER.getElementsByClassName("medaille")].forEach(lChild => {
-        lImg = lChild.querySelector("img");
+    // const L_CONTAINER = document.getElementById("medailles-container");
+    // let lImg, lText;
+    // [...L_CONTAINER.getElementsByClassName("medaille")].forEach(lChild => {
+    //     lImg = lChild.querySelector("img");
         
-        lImg.addEventListener("mouseover", () => {
-            lText = lChild.querySelector("p");
-            void lText.offsetWidth;
-            lText.style.opacity = 1;
-            lText.style.transform = "scaleX(1)";
-        });
-        lImg.addEventListener("mouseout", () => {
-            lText = lChild.querySelector("p");
-            void lText.offsetWidth;
-            lText.style.opacity = 0;
-            lText.style.transform = "scaleX(0)";
-        });
-    });
+    //     lImg.addEventListener("mouseover", () => {
+    //         lText = lChild.querySelector("p");
+    //         void lText.offsetWidth;
+    //         lText.style.opacity = 1;
+    //         lText.style.transform = "scaleX(1)";
+    //     });
+    //     lImg.addEventListener("mouseout", () => {
+    //         lText = lChild.querySelector("p");
+    //         void lText.offsetWidth;
+    //         lText.style.opacity = 0;
+    //         lText.style.transform = "scaleX(0)";
+    //     });
+    // });
 
     DropDownMenuSwitch();
 }

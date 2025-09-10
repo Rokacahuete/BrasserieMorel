@@ -1,13 +1,3 @@
-/// TEMPO
-function RERERE(e) {
-    const el = document.querySelector(".tempo-text");
-    el.classList.remove("temp-anim");
-    void el.offsetWidth;
-    el.classList.add("jump");
-
-}
-document.querySelector(".tempo-text").addEventListener("animationend", (e) => e.target.remove());
-
 /// Consts
 const SWITCH_TIME_ELEMENT_DEFAULT = 5_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_000;
 

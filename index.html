@@ -92,14 +92,6 @@
     </script>
 </head>
 <body>
-    <!-- TEMPO -->
-    <div class="centered">
-        <div class = "temp-anim tempo-text">
-            Ce site est actuellement en développement, merci pour votre indulgence
-            <button onclick = "RERERE()">X</button>
-        </div>
-    </div>
-    <!-- END -->
     <header>
         <div class = "top">
             <div class = "items">
@@ -122,16 +114,16 @@
                     </div>
                 </div> -->
                 <div class = "buttons-container not-on-mobile">
-                    <button><b>Bières</b></button><!-- onclick = "document.location.href = 'Pages/beers.html'" -->
+                    <button onclick = "document.location.href = '#beer-dispensers'"><b>Tireuses</b></button>
                     <button onclick = "document.location.href = '#events'"><b>Évènements</b></button>
-                    <button><b>Contact</b></button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
+                    <button onclick = "document.location.href = '#bottom'"><b>Contact</b></button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
                 </div>
             </div>
             <div class = "drop-down-menu centered">
                 <div id = "header-drop-down-menu" style = "width: 100%">
-                    <button>Bières</button><!-- onclick = "document.location.href = 'Pages/beers.html'" -->
+                    <button onclick = "document.location.href = '#beer-dispensers'">Tireuses</button>
                     <button onclick = "document.location.href = '#events'">Évènements</button>
-                    <button>Contact</button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
+                    <button onclick = "document.location.href = '#bottom'">Contact</button><!-- onclick = "document.location.href = 'Pages/contact.html'" -->
                 </div>
                 <button onclick = "DropDownMenuSwitch()">V</button>
             </div>
@@ -208,7 +200,7 @@
         </div>
     </div>
     <footer>
-        <div class = "bottom items">
+        <div class = "bottom items" id = "bottom">
             <div class = "centered">
                 <h2 class = "title">La Brasserie</h2>
                 <p class = "item">6bis AV Jean Jaurès, 91690 Saclas</p>

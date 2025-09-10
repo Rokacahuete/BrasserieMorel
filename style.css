@@ -217,8 +217,7 @@ button:hover{
 }
 
 .events img{
-    min-height: 200px;
-    max-height: 300px;
+    height: 300px;
     max-width: 80%;
     border: 2px solid black;
     border-radius: 10px;
@@ -464,5 +463,9 @@ img.exit-left{
 
     .banner img{
         border-radius: 20px;
+    }
+
+    .events img{
+        height: 250px;
     }
 }

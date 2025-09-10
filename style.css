@@ -7,6 +7,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 :target{
@@ -227,9 +228,11 @@ button:hover{
 
 img.start-right{
     transform: translateX(100vw);
+    transform: translateX(100dvw);
 }
 img.start-left{
     transform: translateX(-100vw);
+    transform: translateX(-100dvw);
 }
 
 img.enter{
@@ -239,10 +242,12 @@ img.enter{
 img.exit-right{
     position: absolute;
     transform: translateX(-100vw);
+    transform: translateX(-100dvw);
 }
 img.exit-left{
     position: absolute;
     transform: translateX(100vw);
+    transform: translateX(100dvw);
 }
 
 .events h2{

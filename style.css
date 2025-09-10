@@ -74,7 +74,7 @@ h1{
 
 button{
     font-family: "Medieval Sharp";
-    color: black;
+    color: white;
     background-color: lightgray;
     border: 2px solid gray;
     border-radius: 50px;
@@ -149,9 +149,8 @@ button:hover{
 
 .top .buttons-container button{
     --hover-color: darkgray;
-    color: white;
     background-color: rgba(211, 211, 211, 0.4);
-    border: 2px solid rgba(211, 211, 211, 0.555);
+    border: 2px solid rgba(211, 211, 211, 0.6);
     width: 100px;
     height: 60px;
     margin: 10px 10px 0px 0px;
@@ -160,13 +159,12 @@ button:hover{
 .top .buttons-container button:hover{
     transform: scale(1.1);
     background-color: var(--hover-color);
-    color: black;
 }
 
 .top .drop-down-menu button{
     --hover-color: rgb(88, 88, 88);
-    background-color: rgb(170, 170, 170);
-    border-color: rgb(63, 63, 63);
+    background-color: rgba(128, 128, 128, 0.4);
+    border-color: rgb(60, 60, 60);
     height: 35px;
     width: 80%;
     margin: 5px;
@@ -178,8 +176,9 @@ button:hover{
 }
 
 .top .drop-down-menu>button{
-    --hover-color: rgb(105, 105, 105);
-    background-color: gray;
+    --hover-color: rgb(22, 22, 22);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgb(0, 0, 0);
     height: 25px;
     width: calc(100% - 10px);
 }

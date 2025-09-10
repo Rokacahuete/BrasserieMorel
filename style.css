@@ -447,22 +447,31 @@ img.exit-left{
     width: 250px;
 }
 
-.bottom .social-medias>a{
-    --color: black;
-    overflow: hidden;
+.bottom .social-media{
     width: 56px;
     height: 56px;
     padding: 0;
-}
-.bottom .social-medias>a:hover{
-    background: var(--color);
+    margin-inline: 5px;
 }
 
-.bottom .social-media{
+.bottom .social-media>a{
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    transition: opacity .3s;
+}
+.bottom .social-media>a:hover{
+    opacity: 1;
+}
+
+.bottom .social-media>img{
     width: 40px;
     height: 40px;
     padding: 8px;
     transition: transform 0.3s;
+    z-index: 1;
 }
 .bottom .social-media:hover{
     transform: scale(1.1);

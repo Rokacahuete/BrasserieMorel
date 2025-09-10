@@ -414,6 +414,7 @@ img.exit-left{
 
 .bottom{
     background: linear-gradient(105deg, rgba(0, 0, 63, .75), rgba(0, 0, 0, .75) 50%);
+    color: white;
     text-align: center;
     margin-top: 100px;
     width: 100%;
@@ -423,7 +424,7 @@ img.exit-left{
 
 .bottom .title{
     font-family: "Medieval Sharp";
-    background-color: rgb(170, 170, 170);
+    background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid black;
     border-radius: 15px;
     width: 300px;
@@ -433,7 +434,7 @@ img.exit-left{
 }
 
 .bottom .item{
-    background-color: lightgray;
+    background-color: rgba(128, 128, 128, .3);
     border: 2px solid black;
     border-radius: 15px;
     max-width: 250px;
@@ -447,18 +448,21 @@ img.exit-left{
 }
 
 .bottom .social-medias>a{
+    --color: black;
     overflow: hidden;
     width: 56px;
     height: 56px;
     padding: 0;
 }
+.bottom .social-medias>a:hover{
+    background: var(--color);
+}
 
 .bottom .social-media{
-    background-color: lightgray;
     width: 40px;
     height: 40px;
     padding: 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s;
 }
 .bottom .social-media:hover{
     transform: scale(1.1);

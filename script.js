@@ -170,10 +170,10 @@ function LoadSellPoints() {
         lElement = document.createElement("div");
         lElement.className = "sell-point";
         lElement.innerHTML = `
-        <h2>${lName}</h2>
         <div class = "img-container">
             <img src = "Images/Logo/${lImg}">
         </div>
+        <h2>${lName}</h2>
         `;
         ASellPoints.push(lElement);
     });

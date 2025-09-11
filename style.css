@@ -221,12 +221,22 @@ button:hover{
     transition: height 1s ease;
 }
 
-.events img{
+.events .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
     height: 300px;
-    max-width: 80%;
+}
+
+.events img{
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
     border: 2px solid black;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 1s cubic-bezier(.65, -.7, .35, 1.7);
 }
 
@@ -244,12 +254,10 @@ img.enter{
 }
 
 img.exit-right{
-    position: absolute;
     transform: translateX(-100vw);
     transform: translateX(-100dvw);
 }
 img.exit-left{
-    position: absolute;
     transform: translateX(100vw);
     transform: translateX(100dvw);
 }
@@ -346,10 +354,8 @@ img.exit-left{
 .sell-point .img-container{
     border: 2px solid black;
     border-radius: 10px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 300px;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -474,7 +480,7 @@ img.exit-left{
         border-radius: 20px;
     }
 
-    .events img{
+    .events .container{
         height: 200px;
     }
 }

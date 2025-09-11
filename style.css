@@ -265,13 +265,15 @@ img.exit-left{
 .events h2{
     transition: transform .5s cubic-bezier(.5, 2.5, .01, 1), opacity .3s;
 }
-
-.events h2.enter{
-    transform: scale(1);
-    opacity: 1;
-}
 .events h2.exit{
     transform: scale(.8);
+    opacity: 0;
+}
+
+.events .event-date{
+    transition: opacity .3s;
+}
+.events .event-date.exit{
     opacity: 0;
 }
 

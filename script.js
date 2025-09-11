@@ -73,11 +73,10 @@ function UpdateEvent(pIndex, pIsButton) {
     else if (eventIndex >= L_EVENTS_COUNT) eventIndex = 0;
     let lEvent = config.events[eventIndex];
 
-    L_EVENT_DATE.innerHTML = lEvent.date;
-
     if (pIndex == 0) {
         L_EVENT_TITLE.innerHTML = lEvent.name;
         L_EVENT_IMAGE.src = `Images/${lEvent.img}`;
+        L_EVENT_DATE.innerHTML = lEvent.date;
     }
     else {
         let lDirection = pIndex > 0 ? "right" : "left";
@@ -86,6 +85,7 @@ function UpdateEvent(pIndex, pIsButton) {
         L_CONTAINER.insertBefore(lNext, L_EVENT_IMAGE);
         AnimEventImage(L_EVENT_IMAGE, lNext, lDirection);
         AnimEventName(L_EVENT_TITLE, lEvent.name);
+        AnimEventDate(L_EVENT_DATE, lEvent.date);
     }
     
     if (eventTimeout) clearTimeout(eventTimeout);
@@ -109,17 +109,24 @@ function AnimEventName(pTitle, pText) {
     pTitle.offsetWidth;
     pTitle.classList.add("exit");
     let LExitListener = () => {
+        pTitle.innerHTML = pText;
         pTitle.classList.remove("exit");
         pTitle.removeEventListener("animationend", LExitListener);
-        pTitle.innerHTML = pText;
-        pTitle.offsetHeight;
-        pTitle.classList.add("enter");
-        pTitle.addEventListener("transitionend", () => LEnterLister);
-    }
-    let LEnterLister = () => {
-        pTitle.removeEventListener("transitionend", LEnterLister);
     }
     pTitle.addEventListener("transitionend", LExitListener);
+}
+
+function AnimEventDate(pObject, pDate) {
+    if (pObject.innerHTML == pDate) return;
+    
+    pObject.offsetWidth;
+    pObject.classList.add("exit");
+    let LExitListener = () => {
+        pObject.innerHTML = pDate;
+        pObject.classList.remove("exit");
+        pObject.removeEventListener("animationend", LExitListener);
+    }
+    pObject.addEventListener("transitionend", LExitListener);
 }
 
 // Beers

@@ -8,6 +8,7 @@ function Ready() {
     LoadTop();
     LoadYML();
     LoadEvents();
+    LoadBeers();
     LoadEventBeers();
     LoadSellPoints();
     LoadInterviews();
@@ -130,8 +131,35 @@ function AnimEventDate(pObject, pDate) {
 }
 
 // Beers
-let beerIndex = 0;
-let beerTimeout;
+var beerIndex = 0;
+var beerTimeout;
+function LoadBeers() {
+    if (!config.beers) return document.getElementById("beer").remove();
+    if (config.beers.length <= 1) document.getElementById("beer-arrows").remove();
+    UpdateBeers(0);
+}
+function UpdateBeers(pIndex, pIsButton = false) {
+    const L_BEERS_COUNT = config.beers.length;
+    const L_BEER_NAME = document.getElementById("beer-name");
+    const L_BEER_IMAGE = document.getElementById("beer-img");
+    const L_BEER_COLOR = document.getElementById("beer-color");
+
+    beerIndex += pIndex;
+    if (beerIndex < 0) beerIndex = L_BEERS_COUNT - 1;
+    else if (beerIndex >= L_BEERS_COUNT) beerIndex = 0;
+    let lBeer = config.beers[beerIndex];
+
+    L_BEER_NAME.innerHTML = lBeer.name;
+    L_BEER_IMAGE.src = `Images/${lBeer.img}`;
+    L_BEER_COLOR.style.background = lBeer.color;
+
+    if (beerTimeout) clearTimeout(beerTimeout);
+    beerTimeout = setTimeout(() => UpdateBeers(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
+}
+
+// Event Beers
+var eventBeerIndex = 0;
+var eventBeerTimeout;
 function LoadEventBeers() {
     if (!config.event_beers) return document.getElementById("beer-event").remove();
     if (config.event_beers.length <= 1) document.getElementById("event-beers-arrows").remove();
@@ -141,17 +169,19 @@ function UpdateEventBeers(pIndex, pIsButton = false) {
     const L_BEERS_COUNT = config.event_beers.length;
     const L_EVENT_BEER_NAME = document.getElementById("event-beer-name");
     const L_EVENT_BEER_IMAGE = document.getElementById("event-beer-img");
+    const L_EVENT_BEER_COLOR = document.getElementById("event-beer-color");
 
-    beerIndex += pIndex;
-    if (beerIndex < 0) beerIndex = L_BEERS_COUNT - 1;
-    else if (beerIndex >= L_BEERS_COUNT) beerIndex = 0;
-    let lBeer = config.event_beers[beerIndex];
+    eventBeerIndex += pIndex;
+    if (eventBeerIndex < 0) eventBeerIndex = L_BEERS_COUNT - 1;
+    else if (eventBeerIndex >= L_BEERS_COUNT) eventBeerIndex = 0;
+    let lBeer = config.event_beers[eventBeerIndex];
 
     L_EVENT_BEER_NAME.innerHTML = lBeer.name;
     L_EVENT_BEER_IMAGE.src = `Images/${lBeer.img}`;
+    L_EVENT_BEER_COLOR.style.background = lBeer.color;
 
-    if (beerTimeout) clearTimeout(beerTimeout);
-    beerTimeout = setTimeout(() => UpdateEventBeers(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
+    if (eventBeerTimeout) clearTimeout(eventBeerTimeout);
+    eventBeerTimeout = setTimeout(() => UpdateEventBeers(1), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
 }
 
 // Sell points

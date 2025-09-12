@@ -292,10 +292,15 @@ img.exit-left{
     }
 }
 
-.beer img {
+.beer img{
     width: 100%;
     height: 350px;
     object-fit: cover;
+}
+
+.beer .beer-color{
+    width: 100%;
+    height: 20px;
 }
 
 .text{

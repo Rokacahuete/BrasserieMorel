@@ -378,7 +378,8 @@ img.exit-left{
 }
 
 .sell-point{
-    flex: 0 0 200px;
+    max-width: 100%;
+    width: 200px;
     height: 300px;
     background-color: rgba(128, 128, 128, .4);
     border: 2px solid black;
@@ -404,16 +405,28 @@ img.exit-left{
     background-color: rgba(128, 128, 128, .3);
     border: 2px solid black;
     border-radius: 20px;
+    max-width: 100%;
     width: 300px;
+    padding: 0px 5px 5px 5px;
     margin: 0px 10px 10px 10px;
 }
 
 .interview .img-container{
-    width: 95%;
+    border: 1px solid black;
+    width: 90%;
     height: 150px;
     border-radius: 10px;
     margin-bottom: 5px;
     overflow: hidden;
+}
+
+.interview h2{
+    background-color: rgba(20, 20, 20, 0.4);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 8px
 }
 
 .img-container img{

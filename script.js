@@ -205,7 +205,7 @@ function LoadSellPoints() {
         lImg = lPoint.img;
 
         lElement = document.createElement("div");
-        lElement.className = "sell-point";
+        lElement.className = "sell-point centered";
         lElement.innerHTML = `
         <div class = "img-container">
             <img src = "Images/Logo/${lImg}">

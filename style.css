@@ -214,7 +214,7 @@ button:hover{
     border: 2px solid black;
     border-radius: 10px;
     padding: 5px 0px;
-    width:90%;
+    width: 90%;
 }
 
 .events{
@@ -263,6 +263,14 @@ img.exit-left{
 }
 
 .events h2{
+    background-color: rgba(20, 20, 20, 0.4);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    max-width: calc(88% - 20px);
+    width: 500px;
+    margin-bottom: 8px;
+
     transition: transform .5s cubic-bezier(.5, 2.5, .01, 1), opacity .3s;
 }
 .events h2.exit{
@@ -271,10 +279,23 @@ img.exit-left{
 }
 
 .events .event-date{
+    background-color: rgba(128, 128, 128, .3);
+    border: 2px solid black;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 25px;
+    max-width: calc(80% - 50px);
+    width: 300px;
+    
     transition: opacity .3s;
 }
 .events .event-date.exit{
     opacity: 0;
+}
+
+.events .arrow{
+    margin-top: 5px;
 }
 
 .beer{
@@ -309,7 +330,7 @@ img.exit-left{
     border-radius: 10px;
     padding: 10px;
     width: 90%;
-    margin-bottom: 8px
+    margin-bottom: 8px;
 }
 
 .beer .name{

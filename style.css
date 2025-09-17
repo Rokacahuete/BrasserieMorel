@@ -20,12 +20,13 @@ body{
 }
 
 body::before{
-    background: url("Images/WhatsApp Image 2024-08-16 à 18.05.35_e745f811.jpg") no-repeat center center / cover; /* IMG-20250824-WA0004 WhatsApp Image 2024-07-03 à 21.35.35_72a6e289  */
+    background: url("Images/WhatsApp Image 2024-08-16 à 18.05.35_e745f811.jpg") no-repeat center center / cover;
     filter: opacity(.5);
     position: fixed;
     content: "";
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
+    transform: translateY(-10vh);
     object-fit: cover;
     top: 0;
     left: 0;

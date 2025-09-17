@@ -205,7 +205,7 @@ function LoadSellPoints() {
         lImg = lPoint.img;
 
         lElement = document.createElement("div");
-        lElement.className = "sell-point centered";
+        lElement.className = "sell-point centered sous-section";
         lElement.innerHTML = `
         <div class = "img-container">
             <img src = "Images/Logo/${lImg}">
@@ -246,7 +246,7 @@ function LoadInterviews() {
         if (lUrl.hostname == "youtu.be") lImgLink = lUrl.pathname.slice(1);
         else lImgLink = lUrl.searchParams.get("v");
         lInterviews.innerHTML += `
-        <div class = "centered interview">
+        <div class = "centered interview sous-section">
             <h2>${lName}</h2>
             <div class = "img-container">
                 <img src = "https://img.youtube.com/vi/${lImgLink}/mqdefault.jpg" onclick = "window.open('${lInterview.link}', '_blank')">

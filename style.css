@@ -217,6 +217,22 @@ button:hover{
     width: 90%;
 }
 
+.sous-section{
+    background-color: rgba(128, 128, 128, .3);
+    border: 2px solid black;
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+h2{
+    background-color: rgba(20, 20, 20, 0.4);
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    padding: 10px 10px;
+    max-width: 90%;
+}
+
 .events{
     transition: height 1s ease;
 }
@@ -263,13 +279,8 @@ img.exit-left{
 }
 
 .events h2{
-    background-color: rgba(20, 20, 20, 0.4);
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 5px 10px;
     max-width: calc(88% - 20px);
     width: 500px;
-    margin-bottom: 8px;
 
     transition: transform .5s cubic-bezier(.5, 2.5, .01, 1), opacity .3s;
 }
@@ -299,13 +310,9 @@ img.exit-left{
 }
 
 .beer{
-    background-color: rgba(128, 128, 128, .3);
-    border: 2px solid black;
-    border-radius: 20px;
     padding-inline: 15px;
     margin: 0px 10px 20px 10px;
     width: 300px;
-    max-width: 100%;
 }
 
 .beer img{
@@ -325,12 +332,7 @@ img.exit-left{
 }
 
 .beer h2{
-    background-color: rgba(20, 20, 20, 0.4);
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
     width: 90%;
-    margin-bottom: 8px;
 }
 
 .beer .name{
@@ -353,22 +355,13 @@ img.exit-left{
 }
 
 .dispenser{
-    background-color: rgba(128, 128, 128, .3);
-    border: 2px solid black;
-    border-radius: 20px;
     padding-inline: 15px;
     margin: 0px 10px 20px 10px;
     width: 300px;
-    max-width: 100%;
 }
 
 .dispenser h2{
-    background-color: rgba(20, 20, 20, 0.4);
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
     width: 90%;
-    margin-bottom: 8px
 }
 
 .dispenser img{
@@ -399,12 +392,8 @@ img.exit-left{
 }
 
 .sell-point{
-    max-width: 100%;
     width: 200px;
     height: 300px;
-    background-color: rgba(128, 128, 128, .4);
-    border: 2px solid black;
-    border-radius: 20px;
     padding: 15px;
     margin: 0px 10px 20px 10px;
 }
@@ -425,18 +414,11 @@ img.exit-left{
 .sell-point h2{
     align-items: center;
     justify-content: center;
-    background-color: rgba(64, 64, 64, .4);
-    border: 2px solid black;
-    border-radius: 10px;
     width: 90%;
-    padding: 5px 10px;
+    margin-bottom: auto;
 }
 
 .interview{
-    background-color: rgba(128, 128, 128, .3);
-    border: 2px solid black;
-    border-radius: 20px;
-    max-width: 100%;
     width: 300px;
     padding: 0px 5px 5px 5px;
     margin: 0px 10px 10px 10px;
@@ -452,12 +434,7 @@ img.exit-left{
 }
 
 .interview h2{
-    background-color: rgba(20, 20, 20, 0.4);
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
     width: 90%;
-    margin-bottom: 8px
 }
 
 .img-container img{
@@ -482,7 +459,6 @@ img.exit-left{
 .bottom .title{
     font-family: "Medieval Sharp";
     background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid black;
     border-radius: 15px;
     width: 300px;
     height: auto;

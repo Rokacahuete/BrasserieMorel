@@ -197,8 +197,19 @@ button:hover{
     border: 2px solid black;
 }
 
+@keyframes wave{
+    0%{
+        background-position: center 0%;
+        background-size: 100% 200%;
+    }
+    100%{
+        background-position: center 50%;
+        background-size: 150% 150%;
+    }
+}
+
 .section {
-    background: linear-gradient(350deg, rgba(0, 0, 0, .6), rgba(0, 0, 50, .6), rgba(0, 0, 0, .6));
+    background: linear-gradient(350deg, rgba(0, 0, 0, .6), rgba(0, 0, 80, .6), rgba(0, 0, 0, .6));
     border: 2px solid black;
     color: white;
     width: 90%;
@@ -208,6 +219,10 @@ button:hover{
     border-radius: 30px;
     margin-top: 50px;
     padding-bottom: 10px;
+
+    background-size: 100% 200%;
+    background-position: 50% 50%;
+    animation: wave 3s ease-in-out infinite alternate;
 }
 
 .section h1{

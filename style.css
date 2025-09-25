@@ -102,11 +102,23 @@ button:hover{
     transform: scale(1.05);
 }
 
+@keyframes wave-top{
+    0%{
+        background-position: 80% 30%;
+    }
+    100%{
+        background-position: 50% 100%;
+    }
+}
+
 .top{
     width: 100%;
     color: white;
     background: linear-gradient(105deg, rgba(0, 0, 0, .75) 50%, rgba(0, 0, 63, .75));
     border-radius: 15px;
+
+    background-size: 200% 200%;
+    animation: wave-top 4s ease-in-out infinite alternate;
 }
 
 .top .buttons-container{
@@ -463,13 +475,16 @@ img.exit-left{
 }
 
 .bottom{
-    background: linear-gradient(105deg, rgba(0, 0, 63, .75), rgba(0, 0, 0, .75) 50%);
+    background: linear-gradient(105deg, rgba(0, 0, 63, .75), rgba(0, 0, 0, .75) 90%);
     color: white;
     text-align: center;
     margin-top: 100px;
     width: 100%;
     border-radius: 15px;
     padding-block: 20px;
+
+    background-size: 200% 200%;
+    animation: wave-top 1s ease-in-out infinite alternate;
 }
 
 .bottom .title{

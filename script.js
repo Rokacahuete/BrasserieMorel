@@ -47,6 +47,15 @@ function LoadTop() {
     // });
 
     DropDownMenuSwitch();
+    
+    document.querySelectorAll(".section").forEach(lElem => {
+        SetAnimationDelay(lElem, 2, 2, 2);
+    });
+} 
+
+function SetAnimationDelay(pElem, pMinDuration, pDif, pDelay) {
+    pElem.style.animationDuration = `${Math.random() * pDif + pMinDuration}s`;
+    pElem.style.animationDelay = `${Math.random() * pDelay}s`;
 }
 
 function Shuffle(pArray) {

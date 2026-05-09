@@ -1,0 +1,39 @@
+---
+const { name, img } = Astro.props;
+---
+
+<div class="sell-point centered sous-section">
+    <div class = "img-container">
+        <img src = { img }>
+    </div>
+    <h2>{name}</h2>
+</div>
+
+<style>
+.sell-point{
+    width: 200px;
+    height: 300px;
+    padding: 15px;
+    margin: 0px 10px 20px 10px;
+}
+
+.sell-point .img-container{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.sell-point img{
+    width: 100%;
+    height: 100%;
+}
+
+.sell-point h2{
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: auto;
+}
+</style>

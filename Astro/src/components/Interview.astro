@@ -1,0 +1,32 @@
+---
+const { name, link } = Astro.props;
+---
+
+<div class = "centered interview sous-section">
+    <h2>{ name }</h2>
+    <div class = "img-container">
+        <img src={ "https://img.youtube.com/vi/" + {link} + "/mqdefault.jpg" } onclick={ "window.open('" + link + "', '_blank')" }>
+    </div>
+</div>
+
+<style>
+    
+.interview{
+    width: 300px;
+    padding: 0px 5px 5px 5px;
+    margin: 0px 10px 10px 10px;
+}
+
+.interview .img-container{
+    border: 1px solid black;
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.interview h2{
+    width: 90%;
+}
+</style>

@@ -1,0 +1,89 @@
+---
+import Background from "./components/Background.astro";
+import Header from "./components/Header.astro";
+import Footer from "./components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Brasserie Morel</title>
+	</head>
+	<body>
+		<div class="page centered">
+			<Background />
+			<header><Header /></header>
+			<main class="content centered"><slot /></main>
+			<footer><Footer /></footer>
+		</div>
+	</body>
+</html>
+
+<style>
+	/* Colors */
+	:global(*) {
+        --header-color: linear-gradient(105deg, rgba(0, 0, 0, .75) 10%, rgba(0, 0, 63, .75));
+
+        color: white;
+	}
+
+	/* Fonts */
+	:global(@font-face) {
+        font-family: "Medieval Sharp";
+        src: url("./assets/fonts/MedievalSharp-Book.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+	:global(.centered) {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	:global(.glass) {
+        box-shadow : 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter : blur(7px);
+        -webkit-backdrop-filter : blur(7px);
+	}
+
+    :global(.items) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+    }
+    
+    :global(@media (max-width: 768px)) {
+        .not-on-mobile{
+            display: none;
+        }
+    }
+
+	html,
+	body {
+		scroll-padding-top: 350px;
+		overflow-x: hidden;
+		height: 100%;
+		margin: 0;
+	}
+
+	header, main, footer {
+		width: 100%;
+	}
+
+	.page {
+		padding: 8px;
+		min-height: calc(100vh - 16px);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content {
+		flex: 1;
+	}
+</style>

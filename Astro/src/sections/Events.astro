@@ -1,0 +1,132 @@
+---
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+import Event from "../components/Event.astro";
+
+import EventImg1 from "../assets/events/EventTest.png";
+---
+
+<Section>
+    <Title>Nos évènements</Title>
+    <div class = "centered" style = "width: 100%;">
+        
+        <Event title="GP Singapour" date="05/10" img={ EventImg1.src } />
+        <Event title="GP Singapour 2222" date="50 00/10" img={ EventImg1.src } />
+
+        <div class = "items" id = "events-arrows">
+            <button class = "arrow" onclick = "UpdateEvent(-1, true)">Précédent</button>
+            <button class = "arrow" onclick = "UpdateEvent(1, true)">Suivant</button>
+        </div>
+    </div>
+</Section>
+
+<style>
+    .arrow {
+        font-family: "Medieval Sharp";
+        color: white;
+        background-color: rgba(128, 128, 128, .3);
+        border: 2px solid black;
+        border-radius: 50px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        margin-block: 0px 15px;
+
+        display: flex;
+        width: 100px;
+        height: 30px;
+        margin: 5px 10px 5px 10px;
+
+        --hover-color: rgba(0, 0, 0, 0.4);
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .arrow:hover{
+        transform: scale(1.1);
+        background-color: var(--hover-color);
+    }
+</style>
+
+<script>
+    const SWITCH_TIME_ELEMENT_DEFAULT = 5_500, SWITCH_TIME_ELEMENT_WITH_BUTTON = 20_000;
+
+    let AEvents = [
+        { title: "GP Singapour", date: "05/10", "img": "" }
+    ];
+
+    let eventIndex = 0;
+    let eventTimeout = setTimeout(()=>{},1);
+    function LoadEvents() {
+        if (AEvents.length == 0) return document.getElementById("events")?.remove();
+        if (AEvents.length <= 1) document.getElementById("events-arrows")?.remove();
+        UpdateEvent(0, false);
+    }
+
+    function UpdateEvent(pIndex: number, pIsButton: boolean) {
+        const L_CONTAINER = document.getElementById("event-container");
+        if (L_CONTAINER == null) return;
+
+        const L_EVENT_TITLE = document.getElementById("event-title");
+        const L_EVENT_DATE = document.getElementById("event-date");
+        const L_EVENT_IMAGE = document.getElementById("event-img") as HTMLImageElement;
+
+        eventIndex += pIndex;
+        if (eventIndex < 0) eventIndex = AEvents.length - 1;
+        else if (eventIndex >= AEvents.length) eventIndex = 0;
+        let lEvent = AEvents[eventIndex];
+
+        if (pIndex == 0) {
+            if (L_EVENT_TITLE != null) L_EVENT_TITLE.innerHTML = lEvent.title;
+            if (L_EVENT_IMAGE != null) L_EVENT_IMAGE.src = `events/${lEvent.img}`;
+            if (L_EVENT_DATE != null) L_EVENT_DATE.innerHTML = lEvent.date;
+        }
+        else {
+            let lDirection = pIndex > 0 ? "right" : "left";
+            let lNext = document.createElement("img");
+            lNext.src = `events/${lEvent.img}`;
+            L_CONTAINER.insertBefore(lNext, L_EVENT_IMAGE);
+            AnimEventImage(L_EVENT_IMAGE, lNext, lDirection);
+            if (L_EVENT_TITLE != null) AnimEventName(L_EVENT_TITLE, lEvent.title);
+            if (L_EVENT_DATE != null) AnimEventDate(L_EVENT_DATE, lEvent.date);
+        }
+        
+        if (eventTimeout) clearTimeout(eventTimeout);
+        eventTimeout = setTimeout(() => UpdateEvent(1, false), pIsButton ? SWITCH_TIME_ELEMENT_WITH_BUTTON : SWITCH_TIME_ELEMENT_DEFAULT);
+    }
+
+    function AnimEventImage(pImage: HTMLImageElement, pNext: HTMLImageElement, pDirection: string) {
+        pNext.id = "event-img";
+        pNext.className = `start-${pDirection}`;
+        
+        void pNext.offsetWidth;
+        pNext.classList.add("enter");
+        void pImage.offsetWidth;
+        pImage.classList.add(`exit-${pDirection}`);
+        pImage.addEventListener("transitionend", () => pImage.remove());
+    }
+
+    function AnimEventName(pTitle: HTMLElement, pText: string) {
+        if (pTitle.innerHTML == pText) return;
+        
+        pTitle.offsetWidth;
+        pTitle.classList.add("exit");
+        let LExitListener = () => {
+            pTitle.innerHTML = pText;
+            pTitle.classList.remove("exit");
+            pTitle.removeEventListener("animationend", LExitListener);
+        }
+        pTitle.addEventListener("transitionend", LExitListener);
+    }
+
+    function AnimEventDate(pObject: HTMLElement, pDate: string) {
+        if (pObject.innerHTML == pDate) return;
+        
+        pObject.offsetWidth;
+        pObject.classList.add("exit");
+        let LExitListener = () => {
+            pObject.innerHTML = pDate;
+            pObject.classList.remove("exit");
+            pObject.removeEventListener("animationend", LExitListener);
+        }
+        pObject.addEventListener("transitionend", LExitListener);
+    }
+</script>

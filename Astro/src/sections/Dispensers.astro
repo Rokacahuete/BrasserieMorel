@@ -1,0 +1,17 @@
+---
+import Dispenser from "../components/Dispenser.astro";
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+
+import Simple from "../assets/dispensers/Simple.jpg";
+import Double from "../assets/dispensers/Double.jpg";
+---
+
+<Section>
+    <Title>Tireuses</Title>
+    <div class = "items">
+        <Dispenser name="Tireuse simple" img={ Simple.src } />
+        <Dispenser name="Tireuse double" img={ Double.src } />
+    </div>
+    <button onclick = "window.open('Documents/Installation tireuse.pdf', '_blank')">Installer une tireuse</button>
+</Section>

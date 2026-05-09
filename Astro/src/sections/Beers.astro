@@ -1,0 +1,41 @@
+---
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+import Beer from "../components/Beer.astro";
+
+import BeerBlanche from "../assets/beers/Blanche.jpg";
+import BeerBlonde from "../assets/beers/Blonde.jpg";
+import BeerTriple from "../assets/beers/Triple.png";
+import BeerAmbree from "../assets/beers/Ambree.jpg";
+import BeerBrune from "../assets/beers/Brune.jpg";
+
+import BeerIPA from "../assets/beers/IPA.jpg";
+import BeerAmerican from "../assets/beers/AmericanAmber.jpg";
+---
+
+<Section>
+    <Title>Nos bières</Title>
+    <div class = "items">
+        <div class = "centered beer sous-section" id = "beer">
+            <h2>La gamme permanante</h2>
+            <Beer name="Blanche" color="rgb(255, 242, 81)" img={ BeerBlanche.src } />
+            <Beer name="Blonde" color="rgb(239, 255, 52)" img={ BeerBlonde.src } />
+            <Beer name="Triple" color="rgb(245, 166, 33)" img={ BeerTriple.src } />
+            <Beer name="Ambrée" color="rgb(249, 110, 50)" img={ BeerAmbree.src } />
+            <Beer name="Brune" color="rgb(126, 84, 4)" img={ BeerBrune.src } />
+            <div class = "items" id = "beer-arrows">
+                <button class = "arrow text" onclick = "UpdateBeers(-1, true)">Précédente</button>
+                <button class = "arrow text" onclick = "UpdateBeers(1, true)">Suivante</button>
+            </div>
+        </div>
+        <div class = "centered beer beer-event sous-section" id = "beer-event">
+            <h2>Et en ce moment</h2>
+            <Beer name="Blonde IPA" color="rgb(239, 255, 52)" img={ BeerIPA.src } />
+            <Beer name="American Amber" color="rgb(249, 110, 50)" img={ BeerAmerican.src } />
+            <div class = "items" id = "event-beers-arrows">
+                <button class = "arrow text" onclick = "UpdateEventBeers(-1, true)">Précédente</button>
+                <button class = "arrow text" onclick = "UpdateEventBeers(1, true)">Suivante</button>
+            </div>
+        </div>
+    </div>
+</Section>

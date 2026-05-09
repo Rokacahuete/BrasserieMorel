@@ -1,0 +1,43 @@
+---
+const { name, color, img } = Astro.props;
+---
+
+<div class="beer centered">
+    <img src = { img } id = "beer-img">
+    <div class = "beer-color" style={ `background: ${color};` } id = "beer-color"></div>
+    <div class = "text name" id = "beer-name">{ name }</div>
+</div>
+
+<style>
+    
+.beer{
+    padding-inline: 15px;
+    margin: 0px 10px 20px 10px;
+    width: 300px;
+}
+
+.beer img{
+    width: 80%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.beer .beer-color{
+    border-radius: 20px;
+    width: 70%;
+    height: 20px;
+    margin-top: 7px;
+    opacity: .7;
+}
+
+.beer h2{
+    width: 90%;
+}
+
+.beer .name{
+    margin-top: 10px;
+    width: 90%;
+}
+</style>

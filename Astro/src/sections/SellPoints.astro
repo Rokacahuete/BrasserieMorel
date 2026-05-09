@@ -1,0 +1,18 @@
+---
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+import SellPoint from "../components/SellPoint.astro";
+
+// import Logo1 from "../assets/sellpoints/logo1.png";
+---
+
+<Section>
+    <Title>Nos points de vente</Title>
+    <div class = "carousel" id = "sell-point-list">
+    </div>
+    <div class = "items" id = "sell-points-arrows">
+        <button class = "arrow" onclick = "SwitchSellPoints(-1)">LEFT</button>
+        <button class = "arrow" onclick = "SwitchSellPoints(1)">RIGHT</button>
+    </div>
+    <button onclick = "window.open('https:\/\/maps.app.goo.gl/erc8bELveFobgdnF7', '_blank', 'noopener,noreferrer');" id = "all-sell-points-button">Tous nos points de vente ici</button>
+</Section>

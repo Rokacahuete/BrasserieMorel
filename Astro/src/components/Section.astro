@@ -1,0 +1,53 @@
+---
+
+---
+
+<div class = "section glass centered" id = "events">
+    <slot />
+</div>
+
+<style>
+    @keyframes wave{
+        0%{
+            background-position: center 0%;
+            background-size: 100% 200%;
+        }
+        100%{
+            background-position: center 50%;
+            background-size: 150% 150%;
+        }
+    }
+
+    .section {
+        background: linear-gradient(350deg, rgba(0, 0, 0, .6), rgba(0, 0, 80, .6), rgba(0, 0, 0, .6));
+        border: 2px solid black;
+        color: white;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 30px;
+        margin-top: 50px;
+        padding-bottom: 10px;
+
+        background-size: 100% 200%;
+        background-position: 50% 50%;
+        animation: wave 3s ease-in-out infinite alternate;
+    }
+
+    .sous-section{
+        background-color: rgba(128, 128, 128, .3);
+        border: 2px solid black;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    h2{
+        background-color: rgba(20, 20, 20, 0.4);
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        padding: 10px 10px;
+        max-width: 90%;
+    }
+</style>

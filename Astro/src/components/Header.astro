@@ -1,0 +1,167 @@
+---
+import Logo from "../assets/Logo.png";
+import Banner from "../assets/Banner.jpg";
+---
+
+<div class="header glass centered">
+    <div class = "items">
+        <a href = "index.html">
+            <img class = "logo" src = { Logo.src }>
+        </a>
+        <h1>Brasserie Morel</h1>
+        <div class = "buttons-container not-on-mobile">
+            <button onclick = "document.location.href = '#beer-dispensers'"><b>Tireuses</b></button>
+            <button onclick = "document.location.href = '#events'"><b>Évènements</b></button>
+            <button onclick = "document.location.href = '#bottom'"><b>Contact</b></button>
+        </div>
+    </div>
+    <div class = "drop-down-menu centered">
+        <div id = "header-drop-down-menu" style = "width: 100%;">
+            <button onclick = "document.location.href = '#beer-dispensers'">Tireuses</button>
+            <button onclick = "document.location.href = '#events'">Évènements</button>
+            <button onclick = "document.location.href = '#bottom'">Contact</button>
+        </div>
+        <button onclick = "DropDownMenuSwitch()">V</button>
+    </div>
+</div>
+<div class = "centered">
+    <div class = "banner">
+        <img src = { Banner.src }>
+    </div>
+</div>
+
+<style>
+    .header {
+        width: 100%;
+        background: var(--header-color);
+        border-radius: 15px;
+
+        background-size: 200% 200%;
+        animation: wave-top 4s ease-in-out infinite alternate;
+    }
+
+    .logo {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        margin: 10px 30px 6px 30px;
+        transition: background-color .2s, transform .2s;
+    }
+
+    .logo:hover{
+        background-color: rgba(0, 0, 0, 0.7);
+        transform: scale(1.05);
+    }
+
+    h1 {
+        font-family: 'Medieval Sharp', sans-serif;
+    }
+    
+    
+
+.header .buttons-container{
+    margin-left: auto;
+}
+
+.header .buttons-container button{
+    --hover-color: rgb(80, 80, 80);
+    background-color: rgba(128, 128, 128, .3);
+    border: 2px solid black;
+    width: 100px;
+    height: 80px;
+    margin: 20px 10px 0px 0px;
+    border-radius: 15px;
+        
+    transition: background-color 0.3s, transform 0.3s;
+}
+.header .buttons-container button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+}
+
+.drop-down-menu {
+    width: 100%;
+}
+
+.header .drop-down-menu button{
+    --hover-color: rgb(80, 80, 80);
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 1px solid black;
+    height: 35px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 15px;
+    
+    transition: background-color 0.3s, transform 0.3s;
+}
+.header .drop-down-menu button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+}
+
+.header .drop-down-menu>button{
+    --hover-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: black;
+    height: 25px;
+    width: calc(100% - 10px);
+    transition: color 0.3s, background-color 0.3s, transform 0.3s, width .3s;
+}
+.header .drop-down-menu>button:hover{
+    transform: scaleY(1.1);
+    width: 100%;
+    background-color: var(--hover-color);
+}
+
+
+.banner{
+    width: 95%;
+    margin-top: 50px;
+}
+
+.banner img{
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+@media (min-width: 769px){
+    .header .drop-down-menu{
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .banner{
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .banner img{
+        border-radius: 20px;
+    }
+}
+
+
+
+.top .buttons-container{
+    margin-left: auto;
+}
+
+.top .buttons-container button{
+    --hover-color: rgb(80, 80, 80);
+    background-color: rgba(128, 128, 128, .3);
+    border: 2px solid black;
+    width: 100px;
+    height: 60px;
+    margin: 10px 10px 0px 0px;
+    border-radius: 15px;
+}
+.top .buttons-container button:hover{
+    transform: scale(1.1);
+    background-color: var(--hover-color);
+}
+</style>
